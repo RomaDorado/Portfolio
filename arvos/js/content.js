@@ -239,7 +239,7 @@ window.PORTFOLIO = {
         "Campaña de lanzamiento: secuencias de email, creatividades de paid media, sorteo de un iPhone y acciones offline en las salas.",
         "Planificación completa del lanzamiento con diagrama de Gantt y presentación de las mecánicas a dirección."
       ],
-      tools: ["[AGREGAR: herramientas de diseño y desarrollo usadas]"],
+      tools: ["Figma", "Lovable", "Miro"],
       result: "+17 % de uso de la app y +0,75 € de ticket medio en las compras hechas desde la app.",
       /* compare: dos imágenes lado a lado (antes / después) */
       compare: [
