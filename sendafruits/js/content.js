@@ -85,6 +85,11 @@ window.PORTFOLIO = {
     intro:
       "En Cines Artesiete soy el departamento de marketing completo. Cada tarjeta es uno de los puestos que cubro, y todas llevan la misma firma.",
     signature: "J. Dorado",
+   /* ---------- Créditos: lo que cubro como departamento de una persona ---------- */
+  credits: {
+    intro:
+      "En Cines Artesiete soy el departamento de marketing completo. Cada tarjeta es uno de los puestos que cubro, y todas llevan la misma firma.",
+    signature: "J. Dorado",
     /* Cada tarjeta: role (título), text (qué hago), tools (opcional) */
     roles: [
       {
@@ -105,12 +110,12 @@ window.PORTFOLIO = {
       {
         role: "Email marketing",
         text: "Secuencias y newsletters para inauguraciones y lanzamientos de producto, incluido el de la app.",
-        tools: []
+        tools: ["Brevo", "Mailchimp"]
       },
       {
         role: "Producto digital",
         text: "Diseño y lanzamiento de la app corporativa (UX, arquitectura, frontend) y de su programa de fidelización. Resultado: +17 % de uso y +0,75 € de ticket medio en app.",
-        tools: []
+        tools: ["Figma", "Lovable", "Miro"]
       },
       {
         role: "Automatización",
@@ -120,7 +125,7 @@ window.PORTFOLIO = {
       {
         role: "Diseño e IA generativa",
         text: "Diseño gráfico y generación de imágenes y vídeo con IA generativa para las campañas.",
-        tools: ["Canva", "Adobe"]
+        tools: ["Canva", "Claude Design", "ChatGPT", "Apimart", "Higgsfield", "Adobe"]
       },
       {
         role: "Campañas multicanal",
