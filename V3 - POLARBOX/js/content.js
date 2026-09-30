@@ -52,7 +52,7 @@ window.PORTFOLIO = {
       {
         theirs: "Campañas que llegan a tiempo para la temporada",
         context: "Un producto ligado al verano y al ocio, con lanzamientos de gama y presencia en el punto de venta.",
-        mine: "Campañas multicanal de lanzamiento: email, paid media y acciones en punto de venta. Colaboraciones con otras marcas, como el sorteo con El Galeón, y automatización de contenidos con Make para producir más en menos tiempo."
+        mine: "Campañas multicanal de lanzamiento: email, paid media y acciones en punto de venta. Colaboraciones con otras marcas, como Chocolates LACASA o COCA-COLA y automatización de contenidos con Make para producir más en menos tiempo."
       },
       {
         theirs: "Crecer fuera de España",
