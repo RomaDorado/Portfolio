@@ -38,8 +38,9 @@ window.PORTFOLIO = {
      Si borras este bloque (o lo dejas en null), la sección desaparece. */
   company: {
     name: "Iberian Foods",
-    navLabel: "Para Iberian Foods",
-    logo: "",
+    navLabel: "Para Iberian",
+    logo: "assets/img/logo-iberian.png",
+    logoDark: "assets/img/logo-iberian-blanco.png",  /* versión para modo oscuro (opcional) */
     eyebrow: "Por qué Iberian Foods",
     title: "Lo que puedo aportar",
     intro:

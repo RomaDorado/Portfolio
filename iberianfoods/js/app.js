@@ -96,7 +96,9 @@
   if (CO && CO.logo && brand && !document.querySelector(".brand-lockup")) {
     var wrapL = document.createElement("span"); wrapL.className = "brand-lockup";
     brand.parentNode.insertBefore(wrapL, brand); wrapL.appendChild(brand);
-    wrapL.insertAdjacentHTML("beforeend", '<span class="brand-x" aria-hidden="true">×</span><img class="co-logo" src="' + esc(CO.logo) + '" alt="' + esc(CO.name) + '" height="22">');
+    var logoImg = '<img class="co-logo" src="' + esc(CO.logo) + '" alt="' + esc(CO.name) + '" height="22">';
+    if (CO.logoDark) logoImg = '<picture><source srcset="' + esc(CO.logoDark) + '" media="(prefers-color-scheme: dark)">' + logoImg + '</picture>';
+    wrapL.insertAdjacentHTML("beforeend", '<span class="brand-x" aria-hidden="true">×</span>' + logoImg);
   }
   var coSec = document.getElementById("empresa");
   if (CO && coSec) {

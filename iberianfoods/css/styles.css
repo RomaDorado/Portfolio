@@ -1,38 +1,39 @@
-/* Layout concept: una "ficha técnica" de cine aplicada a un perfil de marketing.
-   Paleta: cod gray #1c1c1c · tundora #4d4d4d · gray #808080 · nobel #b3b3b3 · corn #dba800.
-   Corn se reserva como punto de luz: sección activa del menú, filetes de lo que busco y del hito, cierre de créditos y hover de enlaces.
-   Un único momento oscuro: los créditos, donde todos los puestos llevan el mismo nombre. */
+/* Layout concept: una "ficha técnica" de cine aplicada a un perfil de marketing. Versión Iberian Foods.
+   Paleta Iberian Foods: navy #0B1D4F (títulos y franja de créditos), azul #367BB9 (acentos; oscurecido a #2F6CA5
+   en botones para que el texto blanco se lea), azul pizarra #354168 (texto secundario y tarjetas) y azul hielo #B1CBE3. */
 :root {
-  --cod: #1c1c1c; --tundora: #4d4d4d; --gray: #808080; --nobel: #b3b3b3; --corn: #dba800;
+  --navy: #0b1d4f; --blue: #367bb9; --blue-deep: #2f6ca5; --ice: #b1cbe3; --slate: #354168;
 
-  --bg: #f4f4f4;            /* papel: tinte muy claro de la escala de grises */
+  --bg: #f3f6fa;
   --surface: #ffffff;
-  --ink: var(--cod);
-  --muted: var(--tundora);
-  --line: var(--nobel);
-  --rule: var(--cod);
-  --deco: var(--gray);      /* solo decorativo: separadores punteados, rayado de placeholders */
-  --accent: var(--corn);    /* rellenos, marcas y subrayados */
-  --heading: var(--ink);
-  --tertiary: var(--corn);
-  --arrow: var(--tundora);
-  --t1-bg: var(--surface); --t1-line: var(--corn); --t2-bg: var(--surface); --t2-line: var(--corn); --t3-bg: var(--surface); --t3-line: var(--corn);
-  --logo-filter: none;
-  --accent-ink: var(--tundora); /* etiquetas y flechas: gris, no corn */
-  --btn-bg: var(--cod); --btn-ink: #f4f4f4; --btn-hover: var(--tundora);
-  --tag-bg: var(--cod); --tag-ink: #f4f4f4;
-  --band: var(--cod);
-  --band-ink: #f4f4f4;
-  --band-muted: var(--nobel);
-  --band-accent: var(--corn);
-  --band-card: #262626;
-  --band-line: var(--tundora);
-  --ph-bg: #e8e8e8;
-  --ph-ink: var(--tundora);
-  --ph-line: var(--gray);
-  --focus: var(--cod);
+  --ink: #1a2233;
+  --heading: var(--navy);
+  --muted: var(--slate);
+  --line: #d6dfeb;
+  --rule: var(--navy);
+  --deco: #9fb3cc;
+  --accent: var(--blue);
+  --tertiary: var(--blue);
+  --accent-ink: var(--slate);
+  --arrow: var(--blue);
+  --btn-bg: var(--blue-deep); --btn-ink: #ffffff; --btn-hover: var(--navy);
+  --tag-bg: var(--navy); --tag-ink: #ffffff;
+  --band: var(--navy);
+  --band-ink: #ffffff;
+  --band-muted: var(--ice);
+  --band-accent: var(--ice);
+  --band-card: var(--slate);
+  --band-line: #4c5a86;
+  --t1-bg: #e8f0f8; --t1-line: var(--blue);
+  --t2-bg: #eef1f7; --t2-line: var(--slate);
+  --t3-bg: #e3edf7; --t3-line: var(--ice);
+  --ph-bg: #e8f0f8;
+  --ph-ink: var(--navy);
+  --ph-line: var(--blue);
+  --focus: var(--blue-deep);
   --mark: transparent;
-  --link-line: var(--nobel);
+  --link-line: var(--ice);
+  --logo-filter: none;
 
   --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -45,22 +46,24 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: var(--cod); --surface: #262626; --ink: #f0f0f0; --muted: var(--nobel); --line: var(--tundora); --rule: var(--gray); --deco: var(--tundora);
-    --accent: var(--corn); --heading: #f0f0f0; --tertiary: var(--corn); --arrow: var(--nobel); --t1-bg: var(--surface); --t2-bg: var(--surface); --t3-bg: var(--surface); --logo-filter: brightness(0) invert(1); --accent-ink: var(--nobel);
-    --btn-bg: #f0f0f0; --btn-ink: var(--cod); --btn-hover: var(--nobel); --link-line: var(--gray);
-    --tag-bg: var(--nobel); --tag-ink: var(--cod);
-    --band: #121212; --band-ink: #f0f0f0; --band-muted: var(--nobel); --band-accent: var(--corn); --band-card: #1c1c1c; --band-line: #3a3a3a;
-    --ph-bg: #262626; --ph-ink: var(--nobel); --ph-line: var(--gray); --focus: var(--nobel); --mark: transparent;
+    --bg: #07122f; --surface: #0f1f47; --ink: #eef3fa; --heading: var(--ice); --muted: #b9c6da; --line: #1d2f5e; --rule: var(--blue); --deco: #2c3f70;
+    --accent: var(--blue); --tertiary: var(--blue); --accent-ink: #b9c6da; --arrow: var(--ice);
+    --btn-bg: var(--blue-deep); --btn-ink: #ffffff; --btn-hover: var(--blue); --link-line: #2c3f70;
+    --tag-bg: var(--ice); --tag-ink: var(--navy);
+    --band: var(--slate); --band-ink: #ffffff; --band-muted: #d3e1ef; --band-accent: var(--ice); --band-card: var(--navy); --band-line: #4c5a86;
+    --t1-bg: #10244f; --t1-line: var(--blue); --t2-bg: #0f1f47; --t2-line: #6d7aa3; --t3-bg: #122a57; --t3-line: var(--ice);
+    --ph-bg: #10244f; --ph-ink: var(--ice); --ph-line: var(--blue); --focus: var(--ice); --mark: transparent; --logo-filter: none;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-    --bg: var(--cod); --surface: #262626; --ink: #f0f0f0; --muted: var(--nobel); --line: var(--tundora); --rule: var(--gray); --deco: var(--tundora);
-    --accent: var(--corn); --heading: #f0f0f0; --tertiary: var(--corn); --arrow: var(--nobel); --t1-bg: var(--surface); --t2-bg: var(--surface); --t3-bg: var(--surface); --logo-filter: brightness(0) invert(1); --accent-ink: var(--nobel);
-    --btn-bg: #f0f0f0; --btn-ink: var(--cod); --btn-hover: var(--nobel); --link-line: var(--gray);
-    --tag-bg: var(--nobel); --tag-ink: var(--cod);
-    --band: #121212; --band-ink: #f0f0f0; --band-muted: var(--nobel); --band-accent: var(--corn); --band-card: #1c1c1c; --band-line: #3a3a3a;
-    --ph-bg: #262626; --ph-ink: var(--nobel); --ph-line: var(--gray); --focus: var(--nobel); --mark: transparent;
+    --bg: #07122f; --surface: #0f1f47; --ink: #eef3fa; --heading: var(--ice); --muted: #b9c6da; --line: #1d2f5e; --rule: var(--blue); --deco: #2c3f70;
+    --accent: var(--blue); --tertiary: var(--blue); --accent-ink: #b9c6da; --arrow: var(--ice);
+    --btn-bg: var(--blue-deep); --btn-ink: #ffffff; --btn-hover: var(--blue); --link-line: #2c3f70;
+    --tag-bg: var(--ice); --tag-ink: var(--navy);
+    --band: var(--slate); --band-ink: #ffffff; --band-muted: #d3e1ef; --band-accent: var(--ice); --band-card: var(--navy); --band-line: #4c5a86;
+    --t1-bg: #10244f; --t1-line: var(--blue); --t2-bg: #0f1f47; --t2-line: #6d7aa3; --t3-bg: #122a57; --t3-line: var(--ice);
+    --ph-bg: #10244f; --ph-ink: var(--ice); --ph-line: var(--blue); --focus: var(--ice); --mark: transparent; --logo-filter: none;
     color-scheme: dark;
 }
 
@@ -485,3 +488,9 @@ h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); 
 .cookie-actions .btn { min-height: 44px; padding: 0 var(--s4); font-size: 15px; }
 
 
+
+/* Logo de Iberian Foods: horizontal con subtítulo, un poco más alto para que se lea */
+.co-logo { height: 30px; }
+@media (max-width: 760px) { .co-logo { height: 24px; } }
+.nav a { white-space: nowrap; }
+@media (min-width: 761px) and (max-width: 1180px) { .nav a { padding: 0 var(--s2); font-size: 14px; } }
