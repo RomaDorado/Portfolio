@@ -1,36 +1,39 @@
-/* Layout concept: una "ficha técnica" de cine aplicada a un perfil de marketing. Versión ARVOS.
-   Paleta corporativa ARVOS: woodland #3b4b26 (primario) · asparagus #7c8a4c (secundario) ·
-   valencia #d83f31 (terciario) · hacienda #927a16 · putty #e6d38e.
-   Woodland es la tinta y la franja de créditos; asparagus marca bordes y filetes; valencia es el punto
-   de acento mínimo (menú activo, línea del comparador, flujo encendido); putty ilumina lo que va sobre verde oscuro. */
+/* Layout concept: una "ficha técnica" de cine aplicada a un perfil de marketing. Versión Dimarosa.
+   Paleta Dimarosa: atoll #0e5b8b (títulos y franja de créditos), denim #147cbd (botones), crimson #e10e23
+   (acentos puntuales, como las cruces de sus carabelas), sea pink #eb8e9c y manatee #8686ac (bloques y detalles). */
 :root {
-  --woodland: #3b4b26; --asparagus: #7c8a4c; --valencia: #d83f31; --hacienda: #927a16; --putty: #e6d38e;
+  --crimson: #e10e23; --manatee: #8686ac; --denim: #147cbd; --atoll: #0e5b8b; --seapink: #eb8e9c;
 
-  --bg: #f6f3e7;            /* papel: tinte muy claro de putty */
-  --surface: #fffdf6;
-  --ink: #26311a;           /* woodland oscurecido para lectura larga */
-  --muted: #535d3a;         /* asparagus oscurecido: texto secundario legible */
-  --line: #d9d2b4;
-  --rule: var(--woodland);
-  --deco: #b9ae80;
-  --accent: var(--asparagus);   /* secundario: filetes, bordes, marcas */
-  --tertiary: var(--valencia);  /* terciario: acentos puntuales, nunca texto */
+  --bg: #f2f4f7;
+  --surface: #ffffff;
+  --ink: #1c2833;
+  --heading: var(--atoll);
+  --muted: #4a5663;
+  --line: #d8dee6;
+  --rule: var(--atoll);
+  --deco: var(--manatee);
+  --accent: var(--denim);
+  --tertiary: var(--crimson);
   --accent-ink: var(--muted);
-  --arrow: var(--hacienda);
-  --btn-bg: var(--woodland); --btn-ink: #f6f3e7; --btn-hover: #2c3a1c;
-  --tag-bg: var(--woodland); --tag-ink: #f6f3e7;
-  --band: var(--woodland);
-  --band-ink: #f6f3e7;
-  --band-muted: #d3d6bf;
-  --band-accent: var(--putty);
-  --band-card: #45562e;
-  --band-line: #5d6d43;
-  --ph-bg: #f1e8c3;
-  --ph-ink: #5b4c0d;
-  --ph-line: var(--hacienda);
-  --focus: var(--valencia);
+  --arrow: var(--crimson);
+  --btn-bg: var(--denim); --btn-ink: #ffffff; --btn-hover: var(--atoll);
+  --tag-bg: var(--atoll); --tag-ink: #ffffff;
+  --band: var(--atoll);
+  --band-ink: #ffffff;
+  --band-muted: #d6e6f2;
+  --band-accent: #f7c6ce;
+  --band-card: #0a4468;
+  --band-line: #2d77a6;
+  --t1-bg: #fbe8eb; --t1-line: var(--seapink);
+  --t2-bg: #e6f1f9; --t2-line: var(--denim);
+  --t3-bg: #ececf4; --t3-line: var(--manatee);
+  --ph-bg: #fbe8eb;
+  --ph-ink: #5a1a24;
+  --ph-line: var(--seapink);
+  --focus: var(--crimson);
   --mark: transparent;
-  --link-line: var(--putty);
+  --link-line: var(--seapink);
+  --logo-filter: none;
 
   --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -43,22 +46,24 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #151b0e; --surface: #1f2816; --ink: #f1ecd6; --muted: #c9c8a6; --line: #34412a; --rule: var(--asparagus); --deco: #4c5a33;
-    --accent: var(--asparagus); --tertiary: #e8604f; --accent-ink: #c9c8a6; --arrow: var(--putty);
-    --btn-bg: var(--putty); --btn-ink: #26311a; --btn-hover: #efe1a8; --link-line: #5d6d43;
-    --tag-bg: var(--putty); --tag-ink: #26311a;
-    --band: #0e1309; --band-ink: #f1ecd6; --band-muted: #c9c8a6; --band-accent: var(--putty); --band-card: #1a2212; --band-line: #34412a;
-    --ph-bg: #2a2a14; --ph-ink: var(--putty); --ph-line: var(--hacienda); --focus: var(--putty); --mark: transparent;
+    --bg: #0a1a26; --surface: #10263a; --ink: #eef3f8; --heading: #8cc3ea; --muted: #b3c2d1; --line: #1f3a52; --rule: var(--denim); --deco: #3a5670;
+    --accent: var(--denim); --tertiary: #ff4a5c; --accent-ink: #b3c2d1; --arrow: var(--seapink);
+    --btn-bg: var(--denim); --btn-ink: #ffffff; --btn-hover: var(--atoll); --link-line: #3a5670;
+    --tag-bg: #8cc3ea; --tag-ink: #0a1a26;
+    --band: var(--atoll); --band-ink: #ffffff; --band-muted: #d6e6f2; --band-accent: #f7c6ce; --band-card: #0a4468; --band-line: #2d77a6;
+    --t1-bg: #2a1a22; --t1-line: var(--seapink); --t2-bg: #10263a; --t2-line: var(--denim); --t3-bg: #1c1f33; --t3-line: var(--manatee);
+    --ph-bg: #2a1a22; --ph-ink: #f7c6ce; --ph-line: var(--seapink); --focus: var(--seapink); --mark: transparent; --logo-filter: none;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-    --bg: #151b0e; --surface: #1f2816; --ink: #f1ecd6; --muted: #c9c8a6; --line: #34412a; --rule: var(--asparagus); --deco: #4c5a33;
-    --accent: var(--asparagus); --tertiary: #e8604f; --accent-ink: #c9c8a6; --arrow: var(--putty);
-    --btn-bg: var(--putty); --btn-ink: #26311a; --btn-hover: #efe1a8; --link-line: #5d6d43;
-    --tag-bg: var(--putty); --tag-ink: #26311a;
-    --band: #0e1309; --band-ink: #f1ecd6; --band-muted: #c9c8a6; --band-accent: var(--putty); --band-card: #1a2212; --band-line: #34412a;
-    --ph-bg: #2a2a14; --ph-ink: var(--putty); --ph-line: var(--hacienda); --focus: var(--putty); --mark: transparent;
+    --bg: #0a1a26; --surface: #10263a; --ink: #eef3f8; --heading: #8cc3ea; --muted: #b3c2d1; --line: #1f3a52; --rule: var(--denim); --deco: #3a5670;
+    --accent: var(--denim); --tertiary: #ff4a5c; --accent-ink: #b3c2d1; --arrow: var(--seapink);
+    --btn-bg: var(--denim); --btn-ink: #ffffff; --btn-hover: var(--atoll); --link-line: #3a5670;
+    --tag-bg: #8cc3ea; --tag-ink: #0a1a26;
+    --band: var(--atoll); --band-ink: #ffffff; --band-muted: #d6e6f2; --band-accent: #f7c6ce; --band-card: #0a4468; --band-line: #2d77a6;
+    --t1-bg: #2a1a22; --t1-line: var(--seapink); --t2-bg: #10263a; --t2-line: var(--denim); --t3-bg: #1c1f33; --t3-line: var(--manatee);
+    --ph-bg: #2a1a22; --ph-ink: #f7c6ce; --ph-line: var(--seapink); --focus: var(--seapink); --mark: transparent; --logo-filter: none;
     color-scheme: dark;
 }
 
@@ -432,6 +437,32 @@ details.more .inner { padding-bottom: var(--s3); }
   .fit-theirs h3:hover { transform: scale(1.06); }
 }
 
+/* Lockup de cabecera: nombre + logo de la empresa destinataria */
+.brand-lockup { display: inline-flex; align-items: center; gap: var(--s3); min-width: 0; }
+.brand-x { font-family: var(--f-mono); font-size: 14px; color: var(--muted); }
+.co-logo { height: 22px; width: auto; filter: var(--logo-filter); display: block; }
+@media (max-width: 420px) { .co-logo { height: 18px; } .brand-lockup { gap: var(--s2); } }
+@media (max-width: 760px) {
+  .brand-lockup { order: 1; padding-block: var(--s2); gap: var(--s2); }
+  .brand-lockup .brand { order: 0; padding-block: 0; font-size: 18px; }
+  .co-logo { height: 16px; }
+  .head-cta { min-height: 44px; padding: 0 var(--s4); }
+}
+
+
+/* Bloques destacados: fondo y filete configurables por versión (--t1/--t2/--t3) */
+.seeking { background: var(--t2-bg); border-left: 3px solid var(--t2-line); }
+.job-body .hl { background: var(--t1-bg); border-left: 3px solid var(--t1-line); }
+.fit-mine { border-left-width: 3px; }
+.fit-card:nth-child(3n+1) .fit-mine { background: var(--t1-bg); border-color: var(--t1-line); }
+.fit-card:nth-child(3n+2) .fit-mine { background: var(--t2-bg); border-color: var(--t2-line); }
+.fit-card:nth-child(3n+3) .fit-mine { background: var(--t3-bg); border-color: var(--t3-line); }
+.credit-card:hover { border-color: var(--band-ink); }
+
+/* Títulos en morado; el texto corrido queda en gris oscuro */
+h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); }
+.credits h2, .credits h3 { color: var(--band-ink); }
+
 /* Retrato con zoom: la foto crece y su fondo se funde con el color de la marca, dejando la silueta recortada */
 .portrait { position: relative; width: 112px; aspect-ratio: 4 / 5; max-width: 100%; }
 .portrait .p-frame { position: absolute; inset: 0; overflow: hidden; border-radius: var(--radius); background: var(--band); }
@@ -455,3 +486,8 @@ details.more .inner { padding-bottom: var(--s3); }
 .cookie-box a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
 .cookie-actions { display: flex; gap: var(--s2); justify-content: flex-end; flex-wrap: wrap; }
 .cookie-actions .btn { min-height: 44px; padding: 0 var(--s4); font-size: 15px; }
+
+
+/* Logo de Dimarosa: es más alto que ancho (carabelas), necesita más altura para leerse */
+.co-logo { height: 40px; }
+@media (max-width: 760px) { .co-logo { height: 34px; } }

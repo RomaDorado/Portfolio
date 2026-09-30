@@ -427,3 +427,15 @@ details.more .inner { padding-bottom: var(--s3); }
   .portrait:hover .p-cut { transform: scale(1.18); opacity: 1; }
 }
 @media (max-width: 420px) { .portrait { width: 88px; } }
+
+/* Aviso de cookies (analítica con Microsoft Clarity) */
+.cookie-box {
+  position: fixed; z-index: 40; left: 16px; right: 16px; bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+  max-width: 560px; margin-inline: auto; display: grid; gap: var(--s3);
+  padding: var(--s4) var(--s5); background: var(--surface); color: var(--ink);
+  border: 1px solid var(--line); border-top: 3px solid var(--accent); border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgb(0 0 0 / .18); font-size: 15px; line-height: 1.5;
+}
+.cookie-box a { color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.cookie-actions { display: flex; gap: var(--s2); justify-content: flex-end; flex-wrap: wrap; }
+.cookie-actions .btn { min-height: 44px; padding: 0 var(--s4); font-size: 15px; }

@@ -16,12 +16,12 @@ window.PORTFOLIO = {
   /* ---------- Identidad y contacto ---------- */
   person: {
     name: "José Dorado",
-    headline: "Comunicación corporativa, marketing B2B y gestión de marca.",
+    headline: "Marketing, comunicación corporativa y gestión de marca.",
     eyebrow: "Marketing y comunicación · Sevilla → Huelva",
     intro:
-      "Llevo casi 15 años haciendo marketing de principio a fin. Defino la estrategia, la mido con datos y la ejecuto yo mismo: de la nota de prensa a la campaña, de la app a la automatización que lo conecta todo.",
+      "Llevo casi 15 años construyendo marcas y contando su crecimiento: de una tienda a 11 franquicias por España, y hoy toda la comunicación de una cadena de nueve cines. Ordeno marcas, mensajes y canales para que una empresa con muchas piezas se entienda como una sola.",
     seeking:
-      "Busco un puesto de marketing o comunicación corporativa en una empresa de Huelva o de Andalucía occidental. Disponible para trasladarme a Huelva.",
+      "Quiero aportar a Dimarosa en marketing y comunicación. Vivo en Sevilla y estoy disponible para trasladarme a Huelva.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
     photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
@@ -31,7 +31,36 @@ window.PORTFOLIO = {
     cv: "docs/CV-Jose-Dorado-2027.pdf",
     cvNote: "",
     updated: "septiembre 2026",
-    version: "V1 · General"
+    version: "V5 · Dimarosa"
+  },
+
+  /* ---------- Versión personalizada para una empresa ----------
+     Si borras este bloque (o lo dejas en null), la sección desaparece. */
+  company: {
+    name: "Dimarosa",
+    navLabel: "Para Dimarosa",
+    logo: "assets/img/logo-dimarosa.png",
+    eyebrow: "Por qué Dimarosa",
+    title: "Lo que puedo aportar",
+    intro:
+      "Dimarosa nace en 1982 en Palos de la Frontera dentro del Grupo Mariscos Rodríguez, una familia que empezó en el mar en los años 50 y que hoy suma su tercera generación. Importa, procesa y distribuye marisco congelado con siete marcas, delegaciones por toda España y oficinas en Argentina, China y Escocia. Marcas, red y relato: tres frentes donde ya he trabajado.",
+    cards: [
+      {
+        theirs: "Siete marcas que cuentan una misma historia",
+        context: "Dimarosa, Mariscos Rodríguez, Empesur, Pescabona, Caladero, Fishemar y Oceanpesca: flotas, caladeros y especialidades distintas bajo un mismo grupo.",
+        mine: "Storytelling de marca y análisis de arquitecturas de marca como el «House of Brands» de PepsiCo. En Elite Gaming Center alineé central y franquicias bajo un mismo relato."
+      },
+      {
+        theirs: "Una red comercial que hable con una sola voz",
+        context: "Delegaciones en Madrid, Barcelona, Zaragoza, Valencia, Alicante, Málaga y Sevilla, y un catálogo amplio de especies.",
+        mine: "Protocolos comunes de comunicación para una central y 11 franquicias, equipos de hasta 30 personas, y análisis ABC de márgenes para decidir qué referencias impulsar."
+      },
+      {
+        theirs: "Tres generaciones y una calidad que contar",
+        context: "Una historia familiar que arranca en los años 50, una planta de más de 43.000 m² y certificaciones IFS Food, IFS Logistics e ISO 14001.",
+        mine: "Notas de prensa, relación con medios y contenido corporativo. Diseño gráfico, paid media y contenido automatizado con Make para mantener una presencia digital constante."
+      }
+    ]
   },
 
   /* ---------- Ficha técnica (bloque lateral del inicio) ---------- */
@@ -167,58 +196,6 @@ window.PORTFOLIO = {
      fit: "cover" para fotos, "contain" para capturas de pantalla */
   projects: [
     {
-      id: "app-artesiete",
-      featured: true,
-      type: "Proyecto profesional",
-      client: "Cines Artesiete",
-      experience: "artesiete",
-      year: "2026",
-      title: "App corporativa y programa de fidelización",
-      summary:
-        "La app de la cadena y un programa de puntos propio, pensados y lanzados por mí: del flujo de usuario a la campaña de descargas.",
-      role: "Diseño del producto y de su lanzamiento, de principio a fin.",
-      did: [
-        "Userflow, UX, arquitectura y diseño frontend de la app.",
-        "Programa de fidelización en tres niveles (Base, Fan y Cinéfilo) con el claim «Acumula, disfruta, repite».",
-        "Benchmark de programas de referencia, como IKEA Family y Harkins Theatres.",
-        "Campaña de lanzamiento: secuencias de email, creatividades de paid media, sorteo de un iPhone y acciones offline en las salas.",
-        "Planificación completa del lanzamiento con diagrama de Gantt y presentación de las mecánicas a dirección."
-      ],
-      tools: ["Figma", "Lovable", "Miro"],
-      result: "+17 % de uso de la app y +0,75 € de ticket medio en las compras hechas desde la app.",
-      /* compare: dos imágenes lado a lado (antes / después) */
-      compare: [
-        { label: "Antes", src: "assets/img/app-antes.webp", alt: "App anterior de Cines Artesiete: cartelera en lista sobre fondo blanco", fit: "cover", position: "top" },
-        { label: "Ahora", src: "assets/img/app-ahora.webp", alt: "Nueva app de Cines Artesiete: menús del ambigú y cartelera con promoción de la Fiesta del Cine", fit: "contain" }
-      ],
-      image: "",
-      links: []
-    },
-    {
-      id: "paid-artesiete",
-      featured: true,
-      type: "Proyecto profesional",
-      client: "Cines Artesiete",
-      experience: "artesiete",
-      year: "2023 — actualidad",
-      title: "Paid media con presupuesto contenido",
-      summary:
-        "Más de 25 campañas en Meta y Google para una cadena de nueve cines, con menos de 5.000 € de inversión.",
-      role: "Planificación, creatividad y gestión de las campañas.",
-      did: [
-        "Campañas para inauguraciones, lanzamientos de producto y el lanzamiento de la app.",
-        "Coordinación con email y acciones en sala dentro de campañas multicanal."
-      ],
-      tools: ["Meta Business Suite", "Google Ads", "Canva", "Adobe"],
-      result: "Más de 10M de impresiones con menos de 5.000 € de inversión.",
-      image: "assets/img/paid-sorteo.webp",
-      imageAlt: "Creatividad de sorteo: 2 entradas de cine, ramo de rosas y foto profesional, con la colaboración de El Galeón flores y plantas",
-      caption: "Creatividad de sorteo en colaboración con El Galeón flores y plantas.",
-      ratio: "1 / 1",
-      fit: "cover",
-      links: []
-    },
-    {
       id: "egc-escalado",
       featured: true,
       type: "Proyecto profesional",
@@ -242,6 +219,30 @@ window.PORTFOLIO = {
       imageAlt: "Puesto de juego de Elite Gaming Center con silla y monitor de la marca en un evento",
       caption: "Presencia de marca de Elite Gaming Center en evento.",
       ratio: "4 / 3",
+      fit: "cover",
+      links: []
+    },
+    {
+      id: "paid-artesiete",
+      featured: true,
+      type: "Proyecto profesional",
+      client: "Cines Artesiete",
+      experience: "artesiete",
+      year: "2023 — actualidad",
+      title: "Paid media con presupuesto contenido",
+      summary:
+        "Más de 25 campañas en Meta y Google para una cadena de nueve cines, con menos de 5.000 € de inversión.",
+      role: "Planificación, creatividad y gestión de las campañas.",
+      did: [
+        "Campañas para inauguraciones, lanzamientos de producto y el lanzamiento de la app.",
+        "Coordinación con email y acciones en sala dentro de campañas multicanal."
+      ],
+      tools: ["Meta Business Suite", "Google Ads", "Canva", "Adobe"],
+      result: "Más de 10M de impresiones con menos de 5.000 € de inversión.",
+      image: "assets/img/paid-sorteo.webp",
+      imageAlt: "Creatividad de sorteo: 2 entradas de cine, ramo de rosas y foto profesional, con la colaboración de El Galeón flores y plantas",
+      caption: "Creatividad de sorteo en colaboración con El Galeón flores y plantas.",
+      ratio: "1 / 1",
       fit: "cover",
       links: []
     },
@@ -275,6 +276,34 @@ window.PORTFOLIO = {
       ],
       tools: ["Make", "Google Sheets", "ICAA", "FilmAffinity", "IA generativa"],
       result: "Una tarea que podía llevar horas por película ahora se completa al instante, solo con escribir el título.",
+      image: "",
+      links: []
+    },
+    {
+      id: "app-artesiete",
+      featured: true,
+      type: "Proyecto profesional",
+      client: "Cines Artesiete",
+      experience: "artesiete",
+      year: "2026",
+      title: "App corporativa y programa de fidelización",
+      summary:
+        "La app de la cadena y un programa de puntos propio, pensados y lanzados por mí: del flujo de usuario a la campaña de descargas.",
+      role: "Diseño del producto y de su lanzamiento, de principio a fin.",
+      did: [
+        "Userflow, UX, arquitectura y diseño frontend de la app.",
+        "Programa de fidelización en tres niveles (Base, Fan y Cinéfilo) con el claim «Acumula, disfruta, repite».",
+        "Benchmark de programas de referencia, como IKEA Family y Harkins Theatres.",
+        "Campaña de lanzamiento: secuencias de email, creatividades de paid media, sorteo de un iPhone y acciones offline en las salas.",
+        "Planificación completa del lanzamiento con diagrama de Gantt y presentación de las mecánicas a dirección."
+      ],
+      tools: ["Figma", "Lovable", "Miro"],
+      result: "+17 % de uso de la app y +0,75 € de ticket medio en las compras hechas desde la app.",
+      /* compare: dos imágenes lado a lado (antes / después) */
+      compare: [
+        { label: "Antes", src: "assets/img/app-antes.webp", alt: "App anterior de Cines Artesiete: cartelera en lista sobre fondo blanco", fit: "cover", position: "top" },
+        { label: "Ahora", src: "assets/img/app-ahora.webp", alt: "Nueva app de Cines Artesiete: menús del ambigú y cartelera con promoción de la Fiesta del Cine", fit: "contain" }
+      ],
       image: "",
       links: []
     },
