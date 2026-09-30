@@ -85,7 +85,7 @@ window.PORTFOLIO = {
       "En Cines Artesiete soy el departamento de marketing completo. Cada tarjeta es uno de los puestos que cubro, y todas llevan la misma firma.",
     signature: "J. Dorado",
     /* Cada tarjeta: role (título), text (qué hago), tools (opcional) */
-        roles: [
+    roles: [
       {
         role: "Comunicación corporativa",
         text: "Storytelling de marca y comunicación interna: gobernanza, mensajes clave y canales internos para una cadena de nueve cines.",
