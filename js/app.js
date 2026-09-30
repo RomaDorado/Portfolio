@@ -47,6 +47,13 @@
   var headCv = $("#head-cv");
   if (headCv) { headCv.setAttribute("href", P.cv); headCv.setAttribute("download", ""); headCv.setAttribute("aria-label", "Descargar CV en PDF"); }
 
+  /* Retrato: al pasar el ratón hace zoom y el fondo se funde con el color de la marca */
+  function portrait() {
+    if (!real(P.photoCutout) || !real(P.photo)) return media(P.photo, P.photoAlt, "cover");
+    return '<div class="portrait"><div class="p-frame"><img class="p-orig" src="' + esc(P.photo) + '" alt="' + esc(P.photoAlt) + '" decoding="async"></div>' +
+      '<img class="p-cut" src="' + esc(P.photoCutout) + '" alt="" aria-hidden="true" decoding="async"></div>';
+  }
+
   /* ---------- Hero ---------- */
   var names = P.name.split(" ");
   var linkedinBtn = real(P.linkedin)
@@ -71,7 +78,7 @@
         "</div>" +
         '<aside class="sheet" aria-label="Ficha técnica">' +
           '<div class="sheet-head"><span class="label">Ficha técnica</span><span class="label num">' + esc(P.updated) + "</span></div>" +
-          '<div class="sheet-photo">' + media(P.photo, P.photoAlt, "cover") +
+          '<div class="sheet-photo">' + portrait() +
             '<div><p class="who">' + esc(P.name) + '</p><p class="who-sub">Marketing y comunicación corporativa</p></div></div>' +
           "<dl>" + D.facts.map(function (f) {
             return '<div class="row"><dt class="label">' + esc(f.label) + "</dt><dd>" + rich(f.value) + "</dd></div>";

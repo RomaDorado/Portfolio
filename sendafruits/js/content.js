@@ -24,6 +24,7 @@ window.PORTFOLIO = {
       "Quiero aportar a Senda Fruits en marketing y comunicación. Vivo en Sevilla y estoy disponible para trasladarme a Huelva.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
+    photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
     email: "doradoroma@gmail.com",
     phone: "657 597 958",
     linkedin: "https://www.linkedin.com/in/jose-dorado/",

@@ -24,6 +24,7 @@ window.PORTFOLIO = {
       "Quiero aportar a Polarbox en marketing y comunicación de marca. Vivo en Sevilla y estoy disponible para trasladarme a Huelva.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
+    photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
     email: "doradoroma@gmail.com",
     phone: "657 597 958",
     linkedin: "https://www.linkedin.com/in/jose-dorado/",
@@ -52,7 +53,7 @@ window.PORTFOLIO = {
       {
         theirs: "Campañas que llegan a tiempo para la temporada",
         context: "Un producto ligado al verano y al ocio, con lanzamientos de gama y presencia en el punto de venta.",
-        mine: "Campañas multicanal de lanzamiento: email, paid media y acciones en punto de venta. Colaboraciones con otras marcas, como Chocolates LACASA o COCA-COLA y automatización de contenidos con Make para producir más en menos tiempo."
+        mine: "Campañas multicanal de lanzamiento: email, paid media y acciones en punto de venta. Colaboraciones con otras marcas, como el sorteo con El Galeón, y automatización de contenidos con Make para producir más en menos tiempo."
       },
       {
         theirs: "Crecer fuera de España",
