@@ -16,12 +16,13 @@ window.PORTFOLIO = {
   /* ---------- Identidad y contacto ---------- */
   person: {
     name: "José Dorado",
-    headline: "Marketing, comunicación corporativa y gestión de marca.",
-    eyebrow: "Marketing y comunicación · Sevilla → Huelva",
+    valueProp: "Convierto un propósito en un relato que suma socios: así llevé una marca de una tienda a 11 franquicias.",
+    headline: "Comunicación corporativa, relato de marca y marketing B2B.",
+    eyebrow: "Comunicación y marketing · Sevilla → Huelva",
     intro:
       "Llevo casi 15 años construyendo marcas y haciéndolas crecer: de una tienda a 11 franquicias por España, y hoy todo el marketing de una cadena de nueve cines. Defino la estrategia, la cuento con un relato claro y la ejecuto con datos, contenido y automatización.",
     seeking:
-      "Quiero aportar a Senda Fruits en marketing y comunicación. Vivo en Sevilla y estoy disponible para trasladarme a Huelva.",
+      "Quiero aportar a Senda Fruits en comunicación corporativa y marketing. Vivo en Sevilla y estoy disponible para trasladarme a Huelva.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
     photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
@@ -63,6 +64,7 @@ window.PORTFOLIO = {
     ]
   },
 
+
   /* ---------- Ficha técnica (bloque lateral del inicio) ---------- */
   facts: [
     { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 9 cines" },
@@ -76,7 +78,7 @@ window.PORTFOLIO = {
   numbers: [
     { value: "15k€ → 2,1M€", label: "Facturación anual de Elite Gaming Center durante mi etapa (2014–2020)" },
     { value: "1 → 11", label: "De una tienda a 11 franquicias por España" },
-    { value: "+10M", label: "Impresiones en más de 25 campañas de paid media, con menos de 5.000 € de inversión" },
+    { value: "+10M", label: "Impresiones en más de 25 campañas de paid media con menos de 5.000 €: menos de 0,50 € por cada mil" },
     { value: "30", label: "Personas en los equipos que llegué a liderar" }
   ],
 
@@ -299,7 +301,7 @@ window.PORTFOLIO = {
         "Coordinación con email y acciones en sala dentro de campañas multicanal."
       ],
       tools: ["Meta Business Suite", "Google Ads", "Canva", "Adobe"],
-      result: "Más de 10M de impresiones con menos de 5.000 € de inversión.",
+      result: "Más de 10M de impresiones con menos de 5.000 € de inversión: menos de 0,50 € por cada mil impresiones.",
       image: "assets/img/paid-sorteo.webp",
       imageAlt: "Creatividad de sorteo: 2 entradas de cine, ramo de rosas y foto profesional, con la colaboración de El Galeón flores y plantas",
       caption: "Creatividad de sorteo en colaboración con El Galeón flores y plantas.",

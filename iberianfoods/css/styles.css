@@ -494,3 +494,35 @@ h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); 
 @media (max-width: 760px) { .co-logo { height: 24px; } }
 .nav a { white-space: nowrap; }
 @media (min-width: 761px) and (max-width: 1180px) { .nav a { padding: 0 var(--s2); font-size: 14px; } }
+
+/* ---------- Mejoras para RR. HH. y dirección ---------- */
+/* Portada: la propuesta de valor manda; el nombre baja un escalón */
+.hero h1 { font-size: clamp(48px, 6.6vw, 96px); }
+.hero .value {
+  margin-top: var(--s4); max-width: 30ch; text-wrap: balance;
+  font-family: var(--f-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(24px, 2.5vw, 34px); line-height: 1.05; color: var(--ink);
+}
+.hero .headline { font-size: clamp(18px, 1.8vw, 22px); color: var(--muted); }
+/* Casos: el resultado, lo primero */
+.case-result {
+  margin-top: var(--s4); padding: var(--s3) var(--s4); font-weight: 700; font-size: 18px; line-height: 1.4;
+  background: var(--t1-bg, var(--surface)); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0;
+}
+.case-result .label { display: block; margin-bottom: var(--s1); font-weight: 500; }
+/* Barra de contacto fija en móvil */
+.mobile-bar { display: none; }
+@media (max-width: 760px) {
+  .mobile-bar {
+    display: grid; grid-template-columns: repeat(3, 1fr); position: fixed; z-index: 30; left: 0; right: 0; bottom: 0;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)); gap: 6px;
+    background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -6px 20px rgb(0 0 0 / .08);
+  }
+  .mobile-bar a {
+    display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; border-radius: var(--radius);
+    font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink); border: 1px solid var(--line);
+  }
+  .mobile-bar a:last-child { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
+  body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
+  .cookie-box { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+}

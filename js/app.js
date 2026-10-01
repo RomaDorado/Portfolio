@@ -65,6 +65,7 @@
         "<div>" +
           '<p class="label eyebrow">' + esc(P.eyebrow) + "</p>" +
           '<h1 id="hero-title">' + esc(names[0]) + "<br>" + esc(names.slice(1).join(" ")) + "</h1>" +
+          (has(P.valueProp) ? '<p class="value">' + rich(P.valueProp) + "</p>" : "") +
           '<p class="headline">' + rich(P.headline) + "</p>" +
           '<p class="intro">' + rich(P.intro) + "</p>" +
           '<p class="seeking"><span class="label">Qué busco</span>' + rich(P.seeking) + "</p>" +
@@ -172,10 +173,10 @@
           "<div>" +
             '<div class="meta-line">' + typeTag(p.type) + '<span class="label num">' + esc(p.client) + " · " + rich(p.year) + "</span></div>" +
             '<h3 id="t-' + esc(p.id) + '">' + esc(p.title) + "</h3>" +
+            (has(p.result) ? '<p class="case-result"><span class="label">Resultado</span>' + rich(p.result) + "</p>" : "") +
             '<p class="summary">' + rich(p.summary) + "</p>" +
             '<dl class="facts">' +
               (has(p.role) ? '<div class="row"><dt class="label">Mi rol</dt><dd>' + rich(p.role) + "</dd></div>" : "") +
-              (has(p.result) ? '<div class="row result"><dt class="label">Resultado</dt><dd>' + rich(p.result) + "</dd></div>" : "") +
             "</dl>" +
             ((p.did && p.did.length) || tools.length ?
               '<details class="more"><summary>Qué hice <span class="pm" aria-hidden="true">+</span></summary><div class="inner">' +
@@ -236,6 +237,15 @@
         channel("CV", '<a class="link" href="' + esc(P.cv) + '" download>Descargar PDF ↓</a>', "") +
       "</div>" +
     "</div>";
+
+  /* Barra de contacto fija en móvil */
+  var bar = document.createElement("nav");
+  bar.className = "mobile-bar"; bar.setAttribute("aria-label", "Contacto rápido");
+  bar.innerHTML =
+    '<a href="tel:+34' + esc(P.phone.replace(/\s/g, "")) + '"><span aria-hidden="true">☎</span> Llamar</a>' +
+    '<a href="mailto:' + esc(P.email) + '"><span aria-hidden="true">✉</span> Email</a>' +
+    '<a href="' + esc(P.cv) + '" download><span aria-hidden="true">↓</span> CV</a>';
+  document.body.appendChild(bar);
 
   $("#foot").innerHTML = "<span>© " + new Date().getFullYear() + " " + esc(P.name) + " · Actualizado en " + esc(P.updated) + '</span><a class="link" href="#inicio">Volver arriba ↑</a>';
 

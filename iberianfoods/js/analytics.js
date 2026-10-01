@@ -29,6 +29,20 @@
   function read() { try { return localStorage.getItem(KEY); } catch (e) { return null; } }
   function save(v) { try { localStorage.setItem(KEY, v); } catch (e) { /* sin almacenamiento: se volverá a preguntar */ } }
 
+  /* Eventos: qué pasos da cada visitante (filtrables en Clarity → Smart events / Filtros) */
+  document.addEventListener("click", function (e) {
+    var el = e.target.closest && e.target.closest("a, button.copy");
+    if (!el) return;
+    var h = el.getAttribute("href") || "", ev = null;
+    if (/\.pdf$/i.test(h) || /docs\//.test(h)) ev = "cv_download";
+    else if (/linkedin\.com/.test(h)) ev = "linkedin_click";
+    else if (/^mailto:/.test(h)) ev = "email_click";
+    else if (/^tel:/.test(h)) ev = "phone_click";
+    else if (el.classList.contains("copy")) ev = /@/.test(el.getAttribute("data-copy") || "") ? "email_copy" : "phone_copy";
+    else if (/^#p-|^#x-/.test(h)) ev = "case_open";
+    if (ev) { try { window.clarity("event", ev); } catch (err) {} }
+  });
+
   var saved = read();
   if (saved === "yes") { consent(true); return; }
   if (saved === "no") { consent(false); return; }

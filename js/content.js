@@ -16,8 +16,9 @@ window.PORTFOLIO = {
   /* ---------- Identidad y contacto ---------- */
   person: {
     name: "José Dorado",
+    valueProp: "Hago que una marca hable con una sola voz, dentro y fuera: en una red de 11 franquicias y en una cadena de nueve cines.",
     headline: "Comunicación corporativa, marketing B2B y gestión de marca.",
-    eyebrow: "Marketing y comunicación · Sevilla → Huelva",
+    eyebrow: "Comunicación y marketing · Sevilla → Huelva",
     intro:
       "Llevo casi 15 años haciendo marketing de principio a fin. Defino la estrategia, la mido con datos y la ejecuto yo mismo: de la nota de prensa a la campaña, de la app a la automatización que lo conecta todo.",
     seeking:
@@ -34,6 +35,7 @@ window.PORTFOLIO = {
     version: "V1 · General"
   },
 
+
   /* ---------- Ficha técnica (bloque lateral del inicio) ---------- */
   facts: [
     { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 9 cines" },
@@ -47,7 +49,7 @@ window.PORTFOLIO = {
   numbers: [
     { value: "15k€ → 2,1M€", label: "Facturación anual de Elite Gaming Center durante mi etapa (2014–2020)" },
     { value: "1 → 11", label: "De una tienda a 11 franquicias por España" },
-    { value: "+10M", label: "Impresiones en más de 25 campañas de paid media, con menos de 5.000 € de inversión" },
+    { value: "+10M", label: "Impresiones en más de 25 campañas de paid media con menos de 5.000 €: menos de 0,50 € por cada mil" },
     { value: "30", label: "Personas en los equipos que llegué a liderar" }
   ],
 
@@ -210,7 +212,7 @@ window.PORTFOLIO = {
         "Coordinación con email y acciones en sala dentro de campañas multicanal."
       ],
       tools: ["Meta Business Suite", "Google Ads", "Canva", "Adobe"],
-      result: "Más de 10M de impresiones con menos de 5.000 € de inversión.",
+      result: "Más de 10M de impresiones con menos de 5.000 € de inversión: menos de 0,50 € por cada mil impresiones.",
       image: "assets/img/paid-sorteo.webp",
       imageAlt: "Creatividad de sorteo: 2 entradas de cine, ramo de rosas y foto profesional, con la colaboración de El Galeón flores y plantas",
       caption: "Creatividad de sorteo en colaboración con El Galeón flores y plantas.",
