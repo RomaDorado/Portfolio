@@ -18,16 +18,19 @@ window.PORTFOLIO = {
     name: "José Dorado",
     valueProp: "Cuento lo que una empresa hace bien a sus socios, a los medios y a quien compra la fruta.",
     headline: "Comunicación corporativa e interna, marca y marketing.",
-    eyebrow: "Comunicación y marketing · Sevilla → Huelva",
+    eyebrow: "Comunicación y marketing · Sevilla",
     intro:
       "Llevo casi 15 años construyendo marcas y haciéndolas crecer: de una tienda a 11 franquicias por España, y hoy todo el marketing de una cadena de nueve cines. Estrategia, contenido, datos y automatización con IA, para que una marca se entienda igual en el lineal, en redes y dentro de casa.",
+    availability: "Disponible en 15 días · Presencial o remoto",
     seeking:
-      "Quiero aportar a Grufesa en comunicación corporativa y marketing. Vivo en Sevilla y estoy disponible para trasladarme a Huelva.",
+      "Quiero aportar a Grufesa en comunicación corporativa y marketing. Puedo incorporarme en 15 días.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
     photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
     email: "doradoroma@gmail.com",
     phone: "657 597 958",
+    whatsapp: "34657597958",
+    whatsappText: "Hola José, he visto tu portfolio y me gustaría hablar contigo.",
     linkedin: "https://www.linkedin.com/in/jose-dorado/",
     cv: "docs/CV-Jose-Dorado-2027.pdf",
     cvNote: "",
@@ -69,7 +72,8 @@ window.PORTFOLIO = {
   facts: [
     { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 9 cines" },
     { label: "Trayectoria", value: "Casi 15 años en marketing" },
-    { label: "Base", value: "Sevilla · traslado a Huelva" },
+    { label: "Base", value: "Sevilla · traslado a Huelva desde el día 1" },
+    { label: "Disponible", value: "En 15 días · presencial o remoto" },
     { label: "Formación", value: "Máster ESIC en Dirección de Marketing y Gestión Comercial" },
     { label: "Idiomas", value: "Español · Inglés B2 (First Certificate)" }
   ],
@@ -79,7 +83,7 @@ window.PORTFOLIO = {
     { value: "15k€ → 2,1M€", label: "Facturación anual de Elite Gaming Center durante mi etapa (2014–2020)" },
     { value: "1 → 11", label: "De una tienda a 11 franquicias por España" },
     { value: "+10M", label: "Impresiones en más de 25 campañas de paid media con menos de 5.000 €: menos de 0,50 € por cada mil" },
-    { value: "30", label: "Personas en los equipos que llegué a liderar" }
+    { value: "50", label: "Personas en los equipos que llegué a liderar, entre la central y los 11 centros" }
   ],
 
   /* ---------- Créditos: lo que cubro como departamento de una persona ---------- */
@@ -116,7 +120,7 @@ window.PORTFOLIO = {
       },
       {
         role: "Automatización",
-        text: "Procesos de copy y newsletters automatizados con Make y APIs.",
+        text: "Procesos de copy y newsletters automatizados con Make y APIs: más de 15 horas ahorradas a la semana.",
         tools: ["Make", "APIs"]
       },
       {
@@ -181,7 +185,7 @@ window.PORTFOLIO = {
       highlight: "Hito: de 15.000 € al año a 2,1M€, y de una tienda a 11 franquicias por España.",
       bullets: [
         "Plan estratégico de marketing (posicionamiento, precios y mensajes) junto a producto y ventas.",
-        "Liderazgo de equipos de hasta 30 personas.",
+        "Liderazgo de equipos de hasta 50 personas.",
         "Storytelling de marca y comunicación interna; supervisión de redes sociales de central y franquicias.",
         "Portavoz ante medios y gestión de crisis.",
         "Vigilancia de tendencias de marketing digital y offline."
@@ -250,7 +254,7 @@ window.PORTFOLIO = {
         "Formación interna en Make con APIs y CRM a partir de este tipo de flujos."
       ],
       tools: ["Make", "Google Sheets", "ICAA", "FilmAffinity", "IA generativa"],
-      result: "Una tarea que podía llevar horas por película ahora se completa al instante, solo con escribir el título.",
+      result: "Más de 15 horas ahorradas a la semana: una tarea que podía llevar horas por película ahora se completa al instante, solo con escribir el título.",
       image: "",
       links: []
     },
@@ -270,7 +274,7 @@ window.PORTFOLIO = {
         "Storytelling de marca y comunicación interna para central y franquicias.",
         "Supervisión de las redes sociales de toda la red.",
         "Portavoz ante medios y gestión de crisis.",
-        "Liderazgo de equipos de hasta 30 personas."
+        "Liderazgo de equipos de hasta 50 personas."
       ],
       tools: [],
       result: "De 15.000 € al año a 2,1M€ de facturación, y de una tienda a 11 franquicias.",

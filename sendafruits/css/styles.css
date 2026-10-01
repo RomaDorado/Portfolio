@@ -503,6 +503,14 @@ h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); 
   background: var(--t1-bg, var(--surface)); border-left: 3px solid var(--accent); border-radius: 0 var(--radius) var(--radius) 0;
 }
 .case-result .label { display: block; margin-bottom: var(--s1); font-weight: 500; }
+/* Disponibilidad en el inicio */
+.hero .avail {
+  display: inline-flex; align-items: center; gap: 10px; margin: 0 0 var(--s3); padding: 6px 14px;
+  border: 1px solid var(--line); border-radius: 999px; background: var(--surface);
+  font-size: 14px; font-weight: 600; line-height: 1.35; color: var(--ink);
+}
+.hero .avail .dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 4px var(--t1-bg, transparent); }
+@media (max-width: 760px) { .hero .avail { border-radius: var(--radius); font-size: 13px; } }
 /* Barra de contacto fija en móvil */
 .mobile-bar { display: none; }
 @media (max-width: 760px) {
@@ -515,6 +523,8 @@ h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); 
     display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 46px; border-radius: var(--radius);
     font-weight: 600; font-size: 15px; text-decoration: none; color: var(--ink); border: 1px solid var(--line);
   }
+  .mobile-bar.has-wa { grid-template-columns: repeat(4, 1fr); }
+  .mobile-bar.has-wa a { font-size: 14px; }
   .mobile-bar a:last-child { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
   body { padding-bottom: calc(64px + env(safe-area-inset-bottom, 0px)); }
   .cookie-box { bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }

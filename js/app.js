@@ -64,6 +64,7 @@
       '<div class="hero-grid">' +
         "<div>" +
           '<p class="label eyebrow">' + esc(P.eyebrow) + "</p>" +
+          (has(P.availability) ? '<p class="avail"><span class="dot" aria-hidden="true"></span>' + esc(P.availability) + "</p>" : "") +
           '<h1 id="hero-title">' + esc(names[0]) + "<br>" + esc(names.slice(1).join(" ")) + "</h1>" +
           (has(P.valueProp) ? '<p class="value">' + rich(P.valueProp) + "</p>" : "") +
           '<p class="headline">' + rich(P.headline) + "</p>" +
@@ -224,6 +225,7 @@
     return '<div class="channel"><span class="label">' + label + '</span><span class="v">' + valueHtml + "</span>" +
       (copyText ? '<button type="button" class="copy" data-copy="' + esc(copyText) + '">Copiar</button>' : "<span></span>") + "</div>";
   }
+  var wa = P.whatsapp ? "https://wa.me/" + P.whatsapp + (P.whatsappText ? "?text=" + encodeURIComponent(P.whatsappText) : "") : "";
   $("#contacto").innerHTML =
     '<div class="wrap contact-grid">' +
       "<div>" +
@@ -232,6 +234,7 @@
       "</div>" +
       '<div class="channels">' +
         channel("Email", '<a class="link" href="mailto:' + esc(P.email) + '">' + esc(P.email) + "</a>", P.email) +
+        (wa ? channel("WhatsApp", '<a class="link" href="' + esc(wa) + '" target="_blank" rel="noopener">Escribir por WhatsApp ↗</a>', "") : "") +
         channel("Teléfono", '<a class="link num" href="tel:+34' + esc(P.phone.replace(/\s/g, "")) + '">' + esc(P.phone) + "</a>", P.phone) +
         channel("LinkedIn", real(P.linkedin) ? '<a class="link" href="' + esc(P.linkedin) + '" target="_blank" rel="noopener">Ver perfil ↗</a>' : rich(P.linkedin), "") +
         channel("CV", '<a class="link" href="' + esc(P.cv) + '" download>Descargar PDF ↓</a>', "") +
@@ -240,10 +243,11 @@
 
   /* Barra de contacto fija en móvil */
   var bar = document.createElement("nav");
-  bar.className = "mobile-bar"; bar.setAttribute("aria-label", "Contacto rápido");
+  bar.className = "mobile-bar" + (wa ? " has-wa" : ""); bar.setAttribute("aria-label", "Contacto rápido");
   bar.innerHTML =
-    '<a href="tel:+34' + esc(P.phone.replace(/\s/g, "")) + '"><span aria-hidden="true">☎</span> Llamar</a>' +
-    '<a href="mailto:' + esc(P.email) + '"><span aria-hidden="true">✉</span> Email</a>' +
+    (wa ? '<a href="' + esc(wa) + '" target="_blank" rel="noopener">WhatsApp</a>' : "") +
+    '<a href="tel:+34' + esc(P.phone.replace(/\s/g, "")) + '">Llamar</a>' +
+    '<a href="mailto:' + esc(P.email) + '">Email</a>' +
     '<a href="' + esc(P.cv) + '" download><span aria-hidden="true">↓</span> CV</a>';
   document.body.appendChild(bar);
 

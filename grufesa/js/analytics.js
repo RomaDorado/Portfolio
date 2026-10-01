@@ -36,6 +36,7 @@
     var h = el.getAttribute("href") || "", ev = null;
     if (/\.pdf$/i.test(h) || /docs\//.test(h)) ev = "cv_download";
     else if (/linkedin\.com/.test(h)) ev = "linkedin_click";
+    else if (/wa\.me\//.test(h)) ev = "whatsapp_click";
     else if (/^mailto:/.test(h)) ev = "email_click";
     else if (/^tel:/.test(h)) ev = "phone_click";
     else if (el.classList.contains("copy")) ev = /@/.test(el.getAttribute("data-copy") || "") ? "email_copy" : "phone_copy";
