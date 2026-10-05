@@ -345,6 +345,66 @@
     }
   }
 
+  // ---------- Efectos de presentación (solo si el visitante no pide menos movimiento) ----------
+  if ("IntersectionObserver" in window && !reduce) {
+    var easeOut = function (t) { return 1 - Math.pow(1 - t, 4); };
+    var easeInOut = function (t) { return t < .5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; };
+
+    // 1. Cifras clave que cuentan hasta su valor (una sola vez)
+    var nums = document.querySelectorAll(".numbers .n");
+    var ioN = new IntersectionObserver(function (en) {
+      en.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        ioN.unobserve(e.target);
+        var el = e.target, walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT), node, last = null;
+        while ((node = walker.nextNode())) if (/\d/.test(node.nodeValue)) last = node;
+        if (!last) return;
+        var txt = last.nodeValue, m = null, re = /\d+(?:,\d+)?/g, x;
+        while ((x = re.exec(txt))) m = x;
+        if (!m) return;
+        var dec = (m[0].split(",")[1] || "").length, target = parseFloat(m[0].replace(",", "."));
+        var pre = txt.slice(0, m.index), post = txt.slice(m.index + m[0].length);
+        // Lectores de pantalla: leen la cifra final, no la cuenta
+        var sr = document.createElement("span"); sr.className = "vh"; sr.textContent = el.textContent;
+        var vis = document.createElement("span"); vis.setAttribute("aria-hidden", "true");
+        while (el.firstChild) vis.appendChild(el.firstChild);
+        el.appendChild(vis); el.appendChild(sr);
+        var t0 = null, dur = 1200;
+        function step(ts) {
+          if (t0 === null) t0 = ts;
+          var p = Math.min(1, (ts - t0) / dur), v = target * easeOut(p);
+          last.nodeValue = pre + v.toFixed(dec).replace(".", ",") + post;
+          if (p < 1) requestAnimationFrame(step); else last.nodeValue = txt;
+        }
+        last.nodeValue = pre + (0).toFixed(dec).replace(".", ",") + post;
+        setTimeout(function () { requestAnimationFrame(step); }, 250);
+      });
+    }, { threshold: .6 });
+    Array.prototype.forEach.call(nums, function (n) { ioN.observe(n); });
+
+    // 3. Comparador antes / ahora: un pequeño vaivén la primera vez, para que se vea que se arrastra
+    Array.prototype.forEach.call(document.querySelectorAll(".slider"), function (fig) {
+      var r = fig.querySelector(".slider-range"), touched = false;
+      ["pointerdown", "keydown", "input"].forEach(function (ev) { r.addEventListener(ev, function () { touched = true; }); });
+      var ioS = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) return;
+        ioS.disconnect();
+        var keys = [50, 64, 38, 50], seg = 450, t0 = null;
+        setTimeout(function () {
+          requestAnimationFrame(function step(ts) {
+            if (touched) return;
+            if (t0 === null) t0 = ts;
+            var k = Math.min(keys.length - 2, Math.floor((ts - t0) / seg)), p = Math.min(1, (ts - t0 - k * seg) / seg);
+            r.value = keys[k] + (keys[k + 1] - keys[k]) * easeInOut(p);
+            fig.style.setProperty("--pos", r.value + "%");
+            if (!(k === keys.length - 2 && p === 1)) requestAnimationFrame(step);
+          });
+        }, 400);
+      }, { threshold: .7 });
+      ioS.observe(fig);
+    });
+  }
+
   // Navegación: marca la sección visible
   var navLinks = Array.prototype.slice.call(document.querySelectorAll(".nav a"));
   if ("IntersectionObserver" in window) {
