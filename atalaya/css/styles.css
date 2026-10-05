@@ -1,36 +1,37 @@
 /* Layout concept: una "ficha técnica" de cine aplicada a un perfil de comunicación. Versión Atalaya Mining.
-   Paleta provisional inspirada en el cobre y en el distrito de Riotinto (pendiente de la paleta corporativa):
-   pizarra #1e2b35 (primario) · cobre #b8692f (secundario) · rojo Riotinto #a8331f (terciario) ·
-   ocre #c99a3a · arena #efe3d3. El cobre y el rojo solo van en filetes, marcas y acentos, nunca en texto corrido. */
+   Paleta corporativa tomada del logo de Atalaya Riotinto:
+   rojo Atalaya #b41f1d (primario) · granate #791316 (secundario) · carmín #94151c · rojo vivo #e02a1f (acento).
+   El rojo vivo solo va en filetes y marcas pequeñas; el texto corrido queda en gris cálido oscuro. */
 :root {
-  --pizarra: #1e2b35; --cobre: #b8692f; --riotinto: #a8331f; --ocre: #c99a3a; --arena: #efe3d3;
+  --rojo: #b41f1d; --granate: #791316; --carmin: #94151c; --vivo: #e02a1f;
 
-  --bg: #f6f2ec;
-  --surface: #fffdf9;
-  --ink: #1b252d;
-  --muted: #4d5963;
-  --line: #ddd3c5;
-  --rule: var(--pizarra);
-  --deco: #c2b29b;
-  --accent: var(--cobre);
-  --tertiary: var(--riotinto);
-  --accent-ink: #8a4a1c;
-  --arrow: var(--cobre);
-  --btn-bg: var(--pizarra); --btn-ink: #f6f2ec; --btn-hover: #2c3d4a;
-  --tag-bg: var(--pizarra); --tag-ink: #f6f2ec;
-  --band: var(--pizarra);
-  --band-ink: #f6f2ec;
-  --band-muted: #c8cfd4;
-  --band-accent: #e3a874;
-  --band-card: #263643;
-  --band-line: #3a4c5a;
-  --ph-bg: #f3e6d2;
-  --ph-ink: #6b3e14;
-  --ph-line: var(--cobre);
-  --focus: var(--riotinto);
+  --bg: #f7f3f1;
+  --surface: #fffdfc;
+  --ink: #241b1b;
+  --heading: var(--rojo);
+  --muted: #5a4a49;
+  --line: #e3d6d3;
+  --rule: var(--granate);
+  --deco: #cdb5b1;
+  --accent: var(--rojo);
+  --tertiary: var(--vivo);
+  --accent-ink: var(--rojo);
+  --arrow: var(--rojo);
+  --btn-bg: var(--rojo); --btn-ink: #ffffff; --btn-hover: var(--carmin);
+  --tag-bg: var(--granate); --tag-ink: #ffffff;
+  --band: var(--granate);
+  --band-ink: #f7f3f1;
+  --band-muted: #e9c9c6;
+  --band-accent: #ffb3aa;
+  --band-card: #8a1a1d;
+  --band-line: #a3363a;
+  --ph-bg: #f8e3e0;
+  --ph-ink: var(--granate);
+  --ph-line: var(--rojo);
+  --focus: var(--vivo);
   --mark: transparent;
-  --link-line: #e3b48b;
-  --t1-bg: #f6e9dc;
+  --link-line: #eaa59e;
+  --t1-bg: #f9e7e4;
 
   --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -43,22 +44,22 @@
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #11181e; --surface: #18222a; --ink: #eef0f1; --muted: #b9c2c9; --line: #2b3a46; --rule: var(--cobre); --deco: #3c4c58;
-    --accent: #d98a4f; --tertiary: #e0624a; --accent-ink: #e6a676; --arrow: #e3a874;
-    --btn-bg: #e3a874; --btn-ink: #1b252d; --btn-hover: #eebb8f; --link-line: #6b4a30;
-    --tag-bg: #e3a874; --tag-ink: #1b252d;
-    --band: #0b1116; --band-ink: #eef0f1; --band-muted: #b9c2c9; --band-accent: #e3a874; --band-card: #16212a; --band-line: #2b3a46;
-    --ph-bg: #2a2118; --ph-ink: #e3a874; --ph-line: var(--cobre); --focus: #e3a874; --mark: transparent; --t1-bg: #221a14;
+    --bg: #170d0d; --surface: #221414; --ink: #f6eeed; --heading: #f2928a; --muted: #c8b9b8; --line: #3d2424; --rule: var(--vivo); --deco: #4f3030;
+    --accent: #f2928a; --tertiary: #ff6b5e; --accent-ink: #f2928a; --arrow: #f2928a;
+    --btn-bg: #f2928a; --btn-ink: #170d0d; --btn-hover: #f6aea8; --link-line: #6b3330;
+    --tag-bg: #f2928a; --tag-ink: #170d0d;
+    --band: #5c0e11; --band-ink: #f6eeed; --band-muted: #e9c9c6; --band-accent: #ffd0cb; --band-card: #6e1417; --band-line: #8a2a2d;
+    --ph-bg: #2c1515; --ph-ink: #f2928a; --ph-line: var(--rojo); --focus: #ff6b5e; --mark: transparent; --t1-bg: #2a1414;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-    --bg: #11181e; --surface: #18222a; --ink: #eef0f1; --muted: #b9c2c9; --line: #2b3a46; --rule: var(--cobre); --deco: #3c4c58;
-    --accent: #d98a4f; --tertiary: #e0624a; --accent-ink: #e6a676; --arrow: #e3a874;
-    --btn-bg: #e3a874; --btn-ink: #1b252d; --btn-hover: #eebb8f; --link-line: #6b4a30;
-    --tag-bg: #e3a874; --tag-ink: #1b252d;
-    --band: #0b1116; --band-ink: #eef0f1; --band-muted: #b9c2c9; --band-accent: #e3a874; --band-card: #16212a; --band-line: #2b3a46;
-    --ph-bg: #2a2118; --ph-ink: #e3a874; --ph-line: var(--cobre); --focus: #e3a874; --mark: transparent; --t1-bg: #221a14;
+    --bg: #170d0d; --surface: #221414; --ink: #f6eeed; --heading: #f2928a; --muted: #c8b9b8; --line: #3d2424; --rule: var(--vivo); --deco: #4f3030;
+    --accent: #f2928a; --tertiary: #ff6b5e; --accent-ink: #f2928a; --arrow: #f2928a;
+    --btn-bg: #f2928a; --btn-ink: #170d0d; --btn-hover: #f6aea8; --link-line: #6b3330;
+    --tag-bg: #f2928a; --tag-ink: #170d0d;
+    --band: #5c0e11; --band-ink: #f6eeed; --band-muted: #e9c9c6; --band-accent: #ffd0cb; --band-card: #6e1417; --band-line: #8a2a2d;
+    --ph-bg: #2c1515; --ph-ink: #f2928a; --ph-line: var(--rojo); --focus: #ff6b5e; --mark: transparent; --t1-bg: #2a1414;
     color-scheme: dark;
 }
 
@@ -555,3 +556,22 @@ details.more[open] .inner { animation: more-in .24s var(--ease-out); }
 .hero .numbers { animation: hero-in 1s var(--ease-out) 1200ms backwards; }
 /* Texto solo para lectores de pantalla */
 .vh { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- Atalaya Mining: títulos en rojo corporativo y logo junto al nombre ---------- */
+h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); }
+.credits h2, .credits h3, .credit-card h3 { color: var(--band-ink); }
+.brand span { color: var(--granate); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand span { color: var(--ink); } }
+:root[data-theme="dark"] .brand span { color: var(--ink); }
+.brand-lockup { display: inline-flex; align-items: center; gap: var(--s3); min-width: 0; }
+.brand-x { font-family: var(--f-mono); font-size: 14px; color: var(--muted); }
+.co-logo { height: 30px; width: auto; display: block; }
+@media (max-width: 420px) { .brand-lockup { gap: var(--s2); } }
+@media (max-width: 760px) {
+  .brand-lockup { order: 1; padding-block: var(--s2); gap: var(--s2); }
+  .brand-lockup .brand { order: 0; padding-block: 0; font-size: 18px; }
+  .co-logo { height: 24px; }
+  .head-cta { min-height: 44px; padding: 0 var(--s4); }
+}
+.nav a { white-space: nowrap; }
+@media (min-width: 761px) and (max-width: 1180px) { .nav a { padding: 0 var(--s2); font-size: 14px; } }

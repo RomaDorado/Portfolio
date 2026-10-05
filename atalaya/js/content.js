@@ -43,6 +43,8 @@ window.PORTFOLIO = {
   company: {
     name: "Atalaya Mining",
     navLabel: "Para Atalaya",
+    logo: "assets/img/logo-atalaya.png",
+    logoDark: "assets/img/logo-atalaya-blanco.png",  /* versión para modo oscuro */
     eyebrow: "Por qué Atalaya Mining",
     title: "Lo que puedo aportar",
     intro:
