@@ -44,7 +44,6 @@ window.PORTFOLIO = {
     name: "Surexport",
     navLabel: "Para Surexport",
     logo: "assets/img/logo-surexport.png",
-    logoDark: "assets/img/logo-surexport-claro.png",  /* versión para modo oscuro */
     eyebrow: "Por qué Surexport",
     title: "Lo que puedo aportar",
     intro:
