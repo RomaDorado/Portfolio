@@ -1,38 +1,36 @@
 /* Layout concept: una "ficha técnica" de cine aplicada a un perfil de comunicación. Versión ACROSS.
-   Paleta tomada de weareacross.com (Shaping Public Trust):
-   carbón #2b2b2b (fondo de marca) · naranja ACROSS #ff751f (acento) · salvia #616e67 (secundario) · piedra #d7cbc1 / #dbd5d3 (neutros cálidos).
-   El naranja puro no llega a contraste AA sobre claro, así que en modo claro el texto y los botones usan un naranja tostado (#b84a05);
-   el naranja vivo se reserva para la banda oscura, filetes y el modo oscuro, como en su web. */
+   Paleta corporativa de ACROSS: blanco #FFFFFF (fondo), gris antracita #373737 (texto, títulos y franja de créditos)
+   y naranja #FF751F (botones, filetes y acentos; oscurecido a #c2520c cuando es texto sobre blanco). Siempre en claro. */
 :root {
-  --carbon: #2b2b2b; --naranja: #ff751f; --tostado: #b84a05; --salvia: #616e67; --piedra: #d7cbc1;
+  --antracita: #373737; --naranja: #ff751f; --naranja-deep: #c2520c; --negro: #1f1f1f;
 
-  --bg: #f4f1ee;
-  --surface: #fdfcfb;
-  --ink: #232323;
-  --heading: var(--carbon);
-  --muted: #545b57;
-  --line: #ddd6d0;
-  --rule: var(--naranja);
-  --deco: #c9beb4;
-  --accent: var(--tostado);
+  --bg: #ffffff;
+  --surface: #ffffff;
+  --ink: #2b2b2b;
+  --heading: var(--antracita);
+  --muted: #5a5a5a;
+  --line: #e6e6e6;
+  --rule: var(--antracita);
+  --deco: #c9c9c9;
+  --accent: var(--naranja);
   --tertiary: var(--naranja);
-  --accent-ink: var(--tostado);
-  --arrow: var(--tostado);
-  --btn-bg: var(--carbon); --btn-ink: #ffffff; --btn-hover: #000000;
-  --tag-bg: var(--salvia); --tag-ink: #ffffff;
-  --band: var(--carbon);
-  --band-ink: #f4f1ee;
-  --band-muted: #c4c9c6;
+  --accent-ink: var(--naranja-deep);
+  --arrow: var(--naranja-deep);
+  --btn-bg: var(--naranja); --btn-ink: var(--negro); --btn-hover: #ff8c45;
+  --tag-bg: var(--antracita); --tag-ink: #ffffff;
+  --band: var(--antracita);
+  --band-ink: #ffffff;
+  --band-muted: #d6d6d6;
   --band-accent: var(--naranja);
-  --band-card: #363636;
-  --band-line: #4a4a4a;
-  --ph-bg: #fbe6d8;
-  --ph-ink: var(--tostado);
+  --band-card: #424242;
+  --band-line: #555555;
+  --ph-bg: #fff1e8;
+  --ph-ink: var(--naranja-deep);
   --ph-line: var(--naranja);
-  --focus: var(--naranja);
+  --focus: var(--naranja-deep);
   --mark: transparent;
-  --link-line: #f2b48c;
-  --t1-bg: #efe8e1;
+  --link-line: var(--naranja);
+  --t1-bg: #fff3eb;
 
   --f-display: "Big Shoulders Display", "Arial Narrow", "Roboto Condensed", sans-serif;
   --f-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
@@ -43,26 +41,8 @@
   --gutter: clamp(16px, 4vw, 40px);
   --radius: 6px;
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1c1c1c; --surface: #262626; --ink: #f1eeeb; --heading: #f1eeeb; --muted: #b9bfbb; --line: #3a3a3a; --rule: var(--naranja); --deco: #4a4a4a;
-    --accent: var(--naranja); --tertiary: var(--naranja); --accent-ink: #ff8f4a; --arrow: var(--naranja);
-    --btn-bg: var(--naranja); --btn-ink: #1c1c1c; --btn-hover: #ff9152; --link-line: #7a4220;
-    --tag-bg: #8a968f; --tag-ink: #1c1c1c;
-    --band: #111111; --band-ink: #f1eeeb; --band-muted: #b9bfbb; --band-accent: var(--naranja); --band-card: #222222; --band-line: #3a3a3a;
-    --ph-bg: #2e2219; --ph-ink: #ff8f4a; --ph-line: var(--naranja); --focus: var(--naranja); --mark: transparent; --t1-bg: #262626;
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-    --bg: #1c1c1c; --surface: #262626; --ink: #f1eeeb; --heading: #f1eeeb; --muted: #b9bfbb; --line: #3a3a3a; --rule: var(--naranja); --deco: #4a4a4a;
-    --accent: var(--naranja); --tertiary: var(--naranja); --accent-ink: #ff8f4a; --arrow: var(--naranja);
-    --btn-bg: var(--naranja); --btn-ink: #1c1c1c; --btn-hover: #ff9152; --link-line: #7a4220;
-    --tag-bg: #8a968f; --tag-ink: #1c1c1c;
-    --band: #111111; --band-ink: #f1eeeb; --band-muted: #b9bfbb; --band-accent: var(--naranja); --band-card: #222222; --band-line: #3a3a3a;
-    --ph-bg: #2e2219; --ph-ink: #ff8f4a; --ph-line: var(--naranja); --focus: var(--naranja); --mark: transparent; --t1-bg: #262626;
-    color-scheme: dark;
-}
+/* Siempre en claro: fondo blanco también con el modo oscuro del sistema */
+:root { color-scheme: light; }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 76px; }
@@ -558,12 +538,10 @@ details.more[open] .inner { animation: more-in .24s var(--ease-out); }
 /* Texto solo para lectores de pantalla */
 .vh { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
-/* ---------- ACROSS: títulos en carbón, apellido en naranja y logo junto al nombre ---------- */
+/* ---------- ACROSS: títulos en antracita y logo junto al nombre ---------- */
 h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); }
 .credits h2, .credits h3, .credit-card h3 { color: var(--band-ink); }
-.brand span { color: var(--tostado); }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .brand span { color: var(--naranja); } }
-:root[data-theme="dark"] .brand span { color: var(--naranja); }
+.brand span { color: var(--naranja-deep); }
 .brand-lockup { display: inline-flex; align-items: center; gap: var(--s3); min-width: 0; }
 .brand-x { font-family: var(--f-mono); font-size: 14px; color: var(--muted); }
 .co-logo { height: 26px; width: auto; display: block; }
@@ -571,7 +549,7 @@ h1, h2, h3, h4, .brand, .numbers .n, .sheet-photo .who { color: var(--heading); 
 @media (max-width: 760px) {
   .brand-lockup { order: 1; padding-block: var(--s2); gap: var(--s2); }
   .brand-lockup .brand { order: 0; padding-block: 0; font-size: 18px; }
-  .co-logo { height: 24px; }
+  .co-logo { height: 20px; }
   .head-cta { min-height: 44px; padding: 0 var(--s4); }
 }
 .nav a { white-space: nowrap; }

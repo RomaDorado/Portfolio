@@ -16,14 +16,14 @@ window.PORTFOLIO = {
   /* ---------- Identidad y contacto ---------- */
   person: {
     name: "José Dorado",
-    valueProp: "Llevo la estrategia a la ejecución: contenido, datos, automatización e IA para que un equipo pequeño rinda como uno grande.",
-    headline: "Comunicación corporativa, contenido y marketing digital con IA y automatización.",
-    eyebrow: "Comunicación y marketing digital · Sevilla",
+    valueProp: "Construyo marcas y relatos desde el primer día, con pocas manos y mucho método: así llevé una de una tienda a 11 franquicias.",
+    headline: "Comunicación corporativa, posicionamiento de marca y contenido.",
+    eyebrow: "Comunicación corporativa · Sevilla",
     intro:
       "Llevo casi 15 años construyendo marcas y contando su crecimiento: de una tienda a 11 franquicias por España, y hoy la comunicación completa de una cadena de nueve cines. Ordeno mensajes, canales y equipos cuando una organización suma sedes y marcas.",
-    availability: "Disponible en 15 días · Presencial o remoto",
+    availability: "Disponible en 15 días · En remoto, con viajes a Madrid cuando haga falta",
     seeking:
-      "Quiero sumarme a ACROSS desde su lanzamiento y poner mi ejecución digital al servicio de su red. Puedo incorporarme en 15 días.",
+      "Quiero aportar a Across en comunicación, marca y contenido. Trabajo en remoto desde Sevilla y estaré encantado de subir a Madrid siempre que el proyecto lo pida, ya sea para reunirme con el equipo, con un cliente o para una presentación. Puedo incorporarme en 15 días.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
     photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
@@ -34,35 +34,35 @@ window.PORTFOLIO = {
     linkedin: "https://www.linkedin.com/in/jose-dorado/",
     cv: "docs/CV-Jose-Dorado-2027.pdf",
     cvNote: "",
-    updated: "octubre 2026",
-    version: "V10 · ACROSS"
+    updated: "septiembre 2026",
+    version: "V12 · Across"
   },
 
   /* ---------- Versión personalizada para una empresa ----------
      Si borras este bloque (o lo dejas en null), la sección desaparece. */
   company: {
-    name: "ACROSS",
-    navLabel: "Para ACROSS",
+    name: "Across",
+    navLabel: "Para Across",
     logo: "assets/img/logo-across.png",
-    eyebrow: "Por qué ACROSS",
+    eyebrow: "Por qué Across",
     title: "Lo que puedo aportar",
     intro:
-      "ACROSS es la consultora de asuntos corporativos y políticos que Ignacio Jiménez Soler acaba de fundar, tras dirigir la comunicación de Cellnex, Endesa, Telefónica y BBVA. Trabaja en red en 23 países, con un máximo de tres proyectos estratégicos a la vez, y nace con dos proyectos propios: The Positioning Room y Marcomplan. Una firma de alto rendimiento recién lanzada necesita que su propia comunicación esté a la altura desde el primer día. Ahí es donde puedo aportar.",
+      "Across nace en octubre de 2026 como consultora de asuntos corporativos y públicos: comunicación, estrategia, análisis, lobbying y estrategias cognitivas para empresas, gobiernos y organizaciones. Tiene sede en Madrid, una red de colaboradores en 23 países y dos proyectos propios, The Positioning Room y Marcomplan. Marca, lanzamientos y trabajo en red: tres frentes donde ya he trabajado.",
     cards: [
       {
-        theirs: "The Positioning Room: que el análisis llegue",
-        context: "Un think tank sobre ofensivas cognitivas, desinformación y acciones híbridas. Su valor depende de que cada análisis llegue a CEOs, consejeros y gobiernos en el formato y el canal adecuados.",
-        mine: "Cada viernes publico en LinkedIn el análisis de un caso de marca de actualidad: tesis propia, lenguaje claro y pregunta abierta. Automatizo newsletters y contenido con Make e IA para mantener el ritmo sin perder calidad."
+        theirs: "Una firma nueva que tiene que hacerse un nombre",
+        context: "Una consultora recién nacida, con un modelo propio basado en la calidad del diagnóstico, que necesita marca, posicionamiento y presencia desde el primer día.",
+        mine: "Sé construir una marca desde cero: llevé Elite Gaming Center de una tienda a 11 franquicias, con un mismo relato para la central y la red. Hoy soy el departamento de marketing completo de una cadena de cines."
       },
       {
-        theirs: "Marcomplan: atraer al alumno adecuado",
-        context: "Un centro de formación de alto rendimiento en comunicación y liderazgo, dirigido a directivos y organizaciones que quieren protegerse de campañas de desprestigio.",
-        mine: "Lanzamientos multicanal de principio a fin: secuencias de email, paid media y acción presencial. Más de 10M de impresiones con menos de 5.000 € de inversión, y formación interna en automatización."
+        theirs: "Lanzar The Positioning Room y Marcomplan",
+        context: "Un centro de investigación cuya primera publicación, sobre campañas de desinformación con IA agéntica, está prevista para noviembre, y un centro de formación para la primavera de 2027.",
+        mine: "Lanzamientos multicanal con email, paid media y contenido: más de 25 campañas con más de 10M de impresiones y menos de 5.000 €. Diseño gráfico e imagen y vídeo con IA generativa para cada pieza."
       },
       {
-        theirs: "«Hibridación entre el mundo físico y la IA»",
-        context: "Así se define ACROSS: una red de especialistas que se activa por proyecto bajo una misma dirección, con inteligencia contextual y acción precisa.",
-        mine: "Llevo años haciendo que un equipo pequeño rinda como uno grande: más de 15 horas semanales ahorradas con Make, APIs e IA generativa en Cines Artesiete, y una central y 11 franquicias alineadas bajo un mismo relato en Elite Gaming Center."
+        theirs: "Un modelo en red, ágil y con pocas manos",
+        context: "Estructura reducida, clientes seleccionados y profesionales que se suman a cada proyecto según lo que necesite.",
+        mine: "Trabajo en remoto desde Sevilla, con la maleta lista para subir a Madrid cuando un proyecto lo necesite, y estoy acostumbrado a hacer mucho con poco: automatizo procesos con Make, APIs e IA, con más de 15 horas ahorradas a la semana, y cada viernes publico en LinkedIn un análisis de cómo comunican las marcas."
       }
     ]
   },
@@ -72,8 +72,8 @@ window.PORTFOLIO = {
   facts: [
     { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 9 cines" },
     { label: "Trayectoria", value: "Casi 15 años en marketing" },
-    { label: "Base", value: "Sevilla · remoto o presencial donde haga falta" },
-    { label: "Disponible", value: "En 15 días · presencial o remoto" },
+    { label: "Base", value: "Sevilla" },
+    { label: "Disponible", value: "En 15 días · remoto, con viajes a Madrid" },
     { label: "Formación", value: "Máster ESIC en Dirección de Marketing y Gestión Comercial" },
     { label: "Idiomas", value: "Español · Inglés B2 (First Certificate)" }
   ],
@@ -202,6 +202,57 @@ window.PORTFOLIO = {
      fit: "cover" para fotos, "contain" para capturas de pantalla */
   projects: [
     {
+      id: "egc-escalado",
+      featured: true,
+      type: "Proyecto profesional",
+      client: "Elite Gaming Center",
+      experience: "egc",
+      year: "2014 — 2020",
+      title: "De una tienda a 11 franquicias",
+      summary:
+        "El marketing detrás de la expansión de Elite Gaming Center por España, desde el primer local hasta la red de franquicias.",
+      role: "Técnico de Marketing, después COO / Project Manager y finalmente CMO.",
+      did: [
+        "Plan estratégico de marketing con producto y ventas: posicionamiento, precios y mensajes.",
+        "Storytelling de marca y comunicación interna para central y franquicias.",
+        "Supervisión de las redes sociales de toda la red.",
+        "Portavoz ante medios y gestión de crisis.",
+        "Liderazgo de equipos de hasta 50 personas."
+      ],
+      tools: [],
+      result: "De 15.000 € al año a 2,1M€ de facturación, y de una tienda a 11 franquicias.",
+      image: "assets/img/elite-gaming-center.webp",
+      imageAlt: "Puesto de juego de Elite Gaming Center con silla y monitor de la marca en un evento",
+      caption: "Presencia de marca de Elite Gaming Center en evento.",
+      ratio: "4 / 3",
+      fit: "cover",
+      links: []
+    },
+    {
+      id: "paid-artesiete",
+      featured: true,
+      type: "Proyecto profesional",
+      client: "Cines Artesiete",
+      experience: "artesiete",
+      year: "2023 — actualidad",
+      title: "Paid media con presupuesto contenido",
+      summary:
+        "Más de 25 campañas en Meta y Google para una cadena de nueve cines, con menos de 5.000 € de inversión.",
+      role: "Planificación, creatividad y gestión de las campañas.",
+      did: [
+        "Campañas para inauguraciones, lanzamientos de producto y el lanzamiento de la app.",
+        "Coordinación con email y acciones en sala dentro de campañas multicanal."
+      ],
+      tools: ["Meta Business Suite", "Google Ads", "Canva", "Adobe"],
+      result: "Más de 10M de impresiones con menos de 5.000 € de inversión: menos de 0,50 € por cada mil impresiones.",
+      image: "assets/img/paid-sorteo.webp",
+      imageAlt: "Creatividad de sorteo: 2 entradas de cine, ramo de rosas y foto profesional, con la colaboración de El Galeón flores y plantas",
+      caption: "Creatividad de sorteo en colaboración con El Galeón flores y plantas.",
+      ratio: "1 / 1",
+      fit: "cover",
+      links: []
+    },
+    {
       id: "automatizacion",
       featured: true,
       type: "Proyecto profesional",
@@ -260,57 +311,6 @@ window.PORTFOLIO = {
         { label: "Ahora", src: "assets/img/app-ahora.webp", alt: "Nueva app de Cines Artesiete: menús del ambigú y cartelera con promoción de la Fiesta del Cine", fit: "contain" }
       ],
       image: "",
-      links: []
-    },
-    {
-      id: "paid-artesiete",
-      featured: true,
-      type: "Proyecto profesional",
-      client: "Cines Artesiete",
-      experience: "artesiete",
-      year: "2023 — actualidad",
-      title: "Paid media con presupuesto contenido",
-      summary:
-        "Más de 25 campañas en Meta y Google para una cadena de nueve cines, con menos de 5.000 € de inversión.",
-      role: "Planificación, creatividad y gestión de las campañas.",
-      did: [
-        "Campañas para inauguraciones, lanzamientos de producto y el lanzamiento de la app.",
-        "Coordinación con email y acciones en sala dentro de campañas multicanal."
-      ],
-      tools: ["Meta Business Suite", "Google Ads", "Canva", "Adobe"],
-      result: "Más de 10M de impresiones con menos de 5.000 € de inversión: menos de 0,50 € por cada mil impresiones.",
-      image: "assets/img/paid-sorteo.webp",
-      imageAlt: "Creatividad de sorteo: 2 entradas de cine, ramo de rosas y foto profesional, con la colaboración de El Galeón flores y plantas",
-      caption: "Creatividad de sorteo en colaboración con El Galeón flores y plantas.",
-      ratio: "1 / 1",
-      fit: "cover",
-      links: []
-    },
-    {
-      id: "egc-escalado",
-      featured: true,
-      type: "Proyecto profesional",
-      client: "Elite Gaming Center",
-      experience: "egc",
-      year: "2014 — 2020",
-      title: "De una tienda a 11 franquicias",
-      summary:
-        "El marketing detrás de la expansión de Elite Gaming Center por España, desde el primer local hasta la red de franquicias.",
-      role: "Técnico de Marketing, después COO / Project Manager y finalmente CMO.",
-      did: [
-        "Plan estratégico de marketing con producto y ventas: posicionamiento, precios y mensajes.",
-        "Storytelling de marca y comunicación interna para central y franquicias.",
-        "Supervisión de las redes sociales de toda la red.",
-        "Portavoz ante medios y gestión de crisis.",
-        "Liderazgo de equipos de hasta 50 personas."
-      ],
-      tools: [],
-      result: "De 15.000 € al año a 2,1M€ de facturación, y de una tienda a 11 franquicias.",
-      image: "assets/img/elite-gaming-center.webp",
-      imageAlt: "Puesto de juego de Elite Gaming Center con silla y monitor de la marca en un evento",
-      caption: "Presencia de marca de Elite Gaming Center en evento.",
-      ratio: "4 / 3",
-      fit: "cover",
       links: []
     },
     {
