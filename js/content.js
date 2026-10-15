@@ -21,9 +21,9 @@ window.PORTFOLIO = {
     eyebrow: "Comunicación y marketing · Sevilla",
     intro:
       "Llevo casi 15 años haciendo marketing de principio a fin. Defino la estrategia, la mido con datos y la ejecuto yo mismo: de la nota de prensa a la campaña, de la app a la automatización que lo conecta todo.",
-    availability: "Disponible en 15 días · Presencial o remoto",
+    availability: "Incorporación inmediata · Presencial o remoto",
     seeking:
-      "Busco un puesto de marketing o comunicación corporativa en una empresa de Huelva o de Andalucía occidental. Puedo incorporarme en 15 días.",
+      "Busco un puesto de marketing o comunicación corporativa en una empresa de Huelva o de Andalucía occidental. Puedo incorporarme de inmediato.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
     photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
@@ -44,7 +44,7 @@ window.PORTFOLIO = {
     { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 9 cines" },
     { label: "Trayectoria", value: "Casi 15 años en marketing" },
     { label: "Base", value: "Sevilla · traslado a Huelva desde el día 1" },
-    { label: "Disponible", value: "En 15 días · presencial o remoto" },
+    { label: "Disponible", value: "Inmediata · presencial o remoto" },
     { label: "Formación", value: "Máster ESIC en Dirección de Marketing y Gestión Comercial" },
     { label: "Idiomas", value: "Español · Inglés B2 (First Certificate)" }
   ],

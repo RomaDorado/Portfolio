@@ -369,7 +369,7 @@
           if (p < 1) requestAnimationFrame(step); else last.nodeValue = txt;
         }
         last.nodeValue = pre + (0).toFixed(dec).replace(".", ",") + post;
-        setTimeout(function () { requestAnimationFrame(step); }, 250);
+        setTimeout(function () { requestAnimationFrame(step); }, Math.max(250, 1700 - performance.now()));
       });
     }, { threshold: .6 });
     Array.prototype.forEach.call(nums, function (n) { ioN.observe(n); });
