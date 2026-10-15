@@ -21,9 +21,9 @@ window.PORTFOLIO = {
     eyebrow: "Marketing y comunicación · Sevilla",
     intro:
       "Llevo casi 15 años construyendo marcas y haciéndolas crecer: de una tienda a 11 franquicias por España, y hoy todo el marketing de una cadena de nueve cines. Lanzo, cuento y mido: campañas, prensa, contenido y automatización con los datos por delante.",
-    availability: "Disponible en 15 días · Presencial o remoto",
+    availability: "Incorporación inmediata · Presencial o remoto",
     seeking:
-      "Quiero aportar a Viveros Sevilla en marketing y comunicación. Vivo en Sevilla, a media hora de Brenes, y puedo incorporarme en 15 días.",
+      "Quiero aportar a Viveros Sevilla en marketing y comunicación. Vivo en Sevilla, a media hora de Brenes, y puedo incorporarme de inmediato.",
     photo: "assets/img/jose-dorado.jpg",
     photoAlt: "Retrato de José Dorado",
     photoCutout: "assets/img/jose-dorado-recorte.webp",  /* retrato sin fondo para el efecto al pasar el ratón */
@@ -73,7 +73,7 @@ window.PORTFOLIO = {
     { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 9 cines" },
     { label: "Trayectoria", value: "Casi 15 años en marketing" },
     { label: "Base", value: "Sevilla" },
-    { label: "Disponible", value: "En 15 días · presencial o remoto" },
+    { label: "Disponible", value: "Inmediata · presencial o remoto" },
     { label: "Formación", value: "Máster ESIC en Dirección de Marketing y Gestión Comercial" },
     { label: "Idiomas", value: "Español · Inglés B2 (First Certificate)" }
   ],
