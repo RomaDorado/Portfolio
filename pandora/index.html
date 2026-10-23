@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Agenda — Pandora Sevilla (propuesta)</title>
+<meta name="description" content="Conciertos y noches de club en Pandora Sevilla, Calle Gramil 2 (Polígono Store). Consulta el calendario y compra tus entradas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --night:rgb(26, 26, 26);
+    --night-2:#1E1029;
+    --night-3:#2A1838;
+    --ink:#F6EEF9;
+    --mute:#A893B6;
+    --line:#3A2649;
+    --pink:#FF2E93;
+    --violet:#8B5CFF;
+    --amber:#FFB020;
+    --display:'Anton', Impact, sans-serif;
+    --body:'Manrope', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+  body{margin:0;background:var(--night);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  :focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:4px}
+
+  /* Cabecera de la web (simulada) */
+  .site{display:flex;align-items:center;justify-content:space-between;padding:18px clamp(16px,4vw,48px);border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(26,26,26,.92);backdrop-filter:blur(8px);z-index:20}
+  .wordmark{font-family:var(--display);font-size:26px;letter-spacing:.04em;text-decoration:none}
+  .wordmark small{font-family:var(--body);font-size:11px;letter-spacing:.3em;display:block;margin-top:-4px;color:var(--mute)}
+  .site nav{display:flex;gap:24px;font-size:14px;font-weight:600}
+  .site nav a{text-decoration:none;color:var(--mute)}
+  .site nav a[aria-current]{color:var(--ink);box-shadow:inset 0 -2px 0 var(--pink)}
+  @media (max-width:700px){.site nav{display:none}}
+
+  /* Cabecera de la agenda */
+  .top{padding:clamp(28px,5vw,64px) clamp(16px,4vw,48px) 20px;display:grid;grid-template-columns:1fr auto;gap:16px 32px;align-items:end}
+  .month-title{font-family:var(--display);font-weight:400;font-size:clamp(64px,13vw,168px);line-height:.85;margin:0;letter-spacing:-.01em;text-transform:uppercase}
+  .month-title span{display:block;font-family:var(--body);font-size:clamp(15px,1.6vw,18px);font-weight:500;letter-spacing:0;text-transform:none;color:var(--mute);margin-top:14px;line-height:1.4}
+  .month-nav{display:flex;gap:8px}
+  .icon-btn{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--night-2);color:var(--ink);font-size:20px;cursor:pointer;display:grid;place-items:center}
+  .icon-btn:hover:not(:disabled){border-color:var(--pink)}
+  .icon-btn:disabled{opacity:.3;cursor:not-allowed}
+
+  .filters{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+  .top>*{min-width:0}
+  @media (max-width:640px){
+    .top{grid-template-columns:1fr}
+    .month-nav{order:-1;justify-content:flex-end}
+    .stub{grid-row:1}
+  }
+  .chip{border:1px solid var(--line);background:transparent;color:var(--ink);font:600 14px var(--body);padding:9px 16px;border-radius:999px;cursor:pointer;display:inline-flex;align-items:center;gap:8px}
+  .chip .dot{width:8px;height:8px;border-radius:50%}
+  .chip[aria-pressed="true"]{background:var(--ink);color:var(--night);border-color:var(--ink)}
+
+  /* Cuerpo */
+  .layout{display:grid;grid-template-columns:320px 1fr;gap:clamp(24px,4vw,56px);padding:12px clamp(16px,4vw,48px) 80px;align-items:start}
+  @media (max-width:900px){.layout{grid-template-columns:1fr}}
+
+  /* Calendario */
+  .cal{position:sticky;top:96px;background-color:rgba(0, 0, 0, 0.2);backdrop-filter:blur(100px);-webkit-backdrop-filter:blur(100px);border:1px solid var(--line);border-radius:20px;padding:20px}
+  @media (max-width:900px){.cal{position:static}}
+  .cal h2{font:700 15px var(--body);margin:0 0 14px}
+  .grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+  .dow{font-size:12px;color:var(--mute);text-align:center;padding:4px 0 8px;font-weight:600}
+  .day{aspect-ratio:1;border:none;background:transparent;color:var(--mute);font:600 14px var(--body);border-radius:10px;position:relative;cursor:default;padding:0}
+  .day.has{color:var(--ink);background:var(--night-3);cursor:pointer}
+  .day.has:hover{outline:1px solid var(--pink)}
+  .day.past{opacity:.35}
+  .day.today{box-shadow:inset 0 0 0 1px var(--mute)}
+  .day[aria-pressed="true"]{background:var(--pink);color:#fff}
+  .day .marks{position:absolute;left:0;right:0;bottom:6px;display:flex;justify-content:center;gap:3px}
+  .day .marks i{width:5px;height:5px;border-radius:50%}
+  .day[aria-pressed="true"] .marks i{background:#fff!important}
+  .cal-foot{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13px;color:var(--mute);display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .linkish{background:none;border:none;color:var(--pink);font:600 13px var(--body);cursor:pointer;padding:0}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;margin-top:12px;font-size:12px;color:var(--mute)}
+  .legend span{display:inline-flex;align-items:center;gap:6px}
+  .legend i{width:8px;height:8px;border-radius:50%}
+
+  /* Entradas tipo ticket */
+  .list{display:flex;flex-direction:column;gap:14px}
+  .status{font-size:14px;color:var(--mute);margin:0 0 4px}
+  .ticket{display:grid;grid-template-columns:120px 1fr auto;background-color:rgba(0, 0, 0, 0.2);backdrop-filter:blur(100px);-webkit-backdrop-filter:blur(100px);border:1px solid var(--line);border-radius:18px;overflow:hidden;position:relative}
+  .ticket:hover{border-color:#5a3d70}
+  .stub{position:relative;padding:16px 10px;text-align:center;display:flex;flex-direction:column;justify-content:center;background:var(--cat);color:var(--night)}
+  .stub::after{content:"";position:absolute;right:-1px;top:10px;bottom:10px;border-right:2px dashed var(--night)}
+  .stub .wd{font:700 13px var(--body)}
+  .stub .dn{font-family:var(--display);font-size:64px;line-height:.95}
+  .stub .mo{font:700 13px var(--body)}
+  .info{padding:18px 22px;min-width:0}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
+  .tag{font:600 12px var(--body);padding:3px 10px;border-radius:999px;border:1px solid var(--line);color:var(--mute)}
+  .tag.cat{border-color:var(--cat);color:var(--cat)}
+  .tag.so{background:var(--ink);color:var(--night);border-color:var(--ink)}
+  .socio-ico{display:inline-block;width:14px;height:10px;border-radius:2px;background:linear-gradient(var(--ink) 0 0) 0 3px/100% 2px no-repeat,var(--pink);flex:none}
+  .tag.socio{display:inline-flex;align-items:center;gap:6px;color:var(--ink);border-color:var(--pink)}
+  .info h3{font-family:var(--display);font-weight:400;font-size:clamp(24px,2.6vw,32px);line-height:1.02;margin:0 0 8px;letter-spacing:.005em;text-transform:uppercase;overflow-wrap:anywhere}
+  .meta{font-size:14px;color:var(--mute);margin:0}
+  .buy{align-self:center;margin-right:22px;display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;background:var(--pink);color:#fff;font:700 15px var(--body);text-decoration:none;white-space:nowrap}
+  .buy:hover{filter:brightness(1.1)}
+  .buy.off{background:transparent;border:1px solid var(--line);color:var(--mute);pointer-events:none}
+  @media (max-width:640px){
+    .ticket{grid-template-columns:92px 1fr}
+    .stub .dn{font-size:48px}
+    .info{padding:14px 16px}
+    .buy{grid-column:1/-1;margin:0 16px 16px;align-self:stretch}
+  }
+  .empty{border:1px dashed var(--line);border-radius:18px;padding:32px;text-align:center;color:var(--mute)}
+  .empty button{margin-top:12px}
+
+  /* Avisos */
+  .notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:40px}
+  .note{background-color:rgba(0, 0, 0, 0.2);backdrop-filter:blur(100px);-webkit-backdrop-filter:blur(100px);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+  .note h3{font:700 16px var(--body);margin:0 0 6px}
+  .note p{margin:0 0 12px;color:var(--mute);font-size:14px}
+  .note a{color:var(--pink);font-weight:700;font-size:14px}
+
+  .proposal{margin:0 clamp(16px,4vw,48px) 40px;padding:14px 18px;border-radius:12px;background:var(--night-3);color:var(--mute);font-size:13px}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <a class="wordmark" href="#">PANDORA<small>SEVILLA</small></a>
+  <nav aria-label="Principal">
+    <a href="#" aria-current="page">Agenda</a>
+    <a href="#">Info</a>
+    <a href="#">Espacio</a>
+    <a href="#">Reservados</a>
+    <a href="#">Contacto</a>
+  </nav>
+</header>
+
+<main>
+  <section class="top">
+    <h1 class="month-title" id="monthTitle">Octubre<span id="monthSub"></span></h1>
+    <div class="month-nav">
+      <button class="icon-btn" id="prev" aria-label="Mes anterior">‹</button>
+      <button class="icon-btn" id="next" aria-label="Mes siguiente">›</button>
+    </div>
+    <div class="filters" role="group" aria-label="Filtrar por tipo">
+      <button class="chip" data-f="all" aria-pressed="true">Todo</button>
+      <button class="chip" data-f="club" aria-pressed="false"><span class="dot" style="background:var(--violet)"></span>Club</button>
+      <button class="chip" data-f="live" aria-pressed="false"><span class="dot" style="background:var(--pink)"></span>Conciertos</button>
+      <button class="chip" data-f="party" aria-pressed="false"><span class="dot" style="background:var(--amber)"></span>Fiestas</button>
+    </div>
+  </section>
+
+  <div class="layout">
+    <aside class="cal" aria-label="Calendario">
+      <h2 id="calTitle">Octubre 2026</h2>
+      <div class="grid" id="grid"></div>
+      <div class="legend">
+        <span><i style="background:var(--violet)"></i>Club</span>
+        <span><i style="background:var(--pink)"></i>Concierto</span>
+        <span><i style="background:var(--amber)"></i>Fiesta</span>
+        <span><b class="socio-ico" aria-hidden="true"></b>Vale con tarjeta de socio</span>
+      </div>
+      <div class="cal-foot">
+        <span id="calCount"></span>
+        <button class="linkish" id="clearDay" hidden>Ver todo el mes</button>
+      </div>
+    </aside>
+
+    <section aria-live="polite">
+      <p class="status" id="status"></p>
+      <div class="list" id="list"></div>
+
+      <div class="notes">
+        <div class="note">
+          <h3>Tarjeta de socio Club Pandora</h3>
+          <p>Vale en las noches de club y fiestas, no en conciertos: 1 € de descuento en todas las copas, 3% de cashback y chupito de bienvenida. Cómprala online, recógela en taquilla y actívala en club.pandorasevilla.com.</p>
+          <a href="https://www.fourvenues.com/es/rollercoaster/events/tarjeta-de-socio-no-es-una-entrada-31-12-2025-GQ25">Comprar la tarjeta</a>
+        </div>
+        <div class="note">
+          <h3>Menores en conciertos</h3>
+          <p>Si tienes 16 o 17 años, trae impreso el formulario de autorización firmado.</p>
+          <a href="https://www.dropbox.com/scl/fi/pnxjt72ulb9iisteu73s2/AUTORIZACI-N-MENORES.pdf?rlkey=w6zofihtc8bzgbzdfktl7svqk&dl=0">Descargar autorización</a>
+        </div>
+        <div class="note">
+          <h3>Cómo llegar</h3>
+          <p>Calle Gramil 2, Polígono Store, Sevilla.</p>
+          <a href="https://maps.google.com/?q=Calle+Gramil+2+Sevilla">Abrir en Google Maps</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<p class="proposal">Propuesta de diseño. Eventos y enlaces tomados del Linktree oficial de Pandora Sevilla el 23/10/2026. Los eventos ya celebrados se ocultan solos.</p>
+
+<script>
+// type: club = noche electrónica · live = concierto · party = fiesta temática
+// y: año; m: mes (1-12); d: día
+const EVENTS = [
+  {d:9,m:10,y:2026,t:"Orishas",type:"live",tk:"Ticketmaster",u:"https://www.ticketmaster.es/event/orishas-entradas/66305878"},
+  {d:9,m:10,y:2026,t:"Rebels w/ Klangkuenstler",sub:"Aniversario vol. 1",type:"club",tk:"Web oficial",u:"https://www.klangkuenstlersevilla.com"},
+  {d:10,m:10,y:2026,t:"The Perreo Tardeo",type:"party",tk:"Fourvenues",u:"https://www.fourvenues.com/oscar-ruiz2/events/theperreo-en-pandora-sevilla---tardeo-de-reggaeton-old-school---10-octubre-10-10-2026-N6E4"},
+  {d:10,m:10,y:2026,t:"Jazzy w/ Raresh",room:"The Moon",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/SFB6"},
+  {d:10,m:10,y:2026,t:"Âme Live y Maya Jane Coles",sub:"Aniversario vol. 2",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/NLCY"},
+  {d:11,m:10,y:2026,t:"Bresh",type:"party",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/XWXS"},
+  {d:16,m:10,y:2026,t:"Binomio de Oro de América",type:"live",tk:"El Corte Inglés",u:"https://www.elcorteingles.es/entradas/conciertos/entradas-festival-vallenato-binomio-de-oro-de-america-sevilla"},
+  {d:17,m:10,y:2026,t:"Papá Levante",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-papa-levante-sevilla-sala-pandora-sabado-17-de-octubre"},
+  {d:17,m:10,y:2026,t:"Ritmika Galaxy",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/KOZK"},
+  {d:23,m:10,y:2026,t:"Abhir",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-abhir-sevilla-sala-pandora-viernes-23-de-octubre"},
+  {d:23,m:10,y:2026,t:"Winners w/ Anthony Godfather, Dany Gomez y Los Canarios",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/9GBP"},
+  {d:24,m:10,y:2026,t:"Ruslana",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-ruslana-sevilla-sala-pandora-sabado-24-de-octubre"},
+  {d:24,m:10,y:2026,t:"DJ Pepo ANL",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/9CR0"},
+  {d:30,m:10,y:2026,t:"La Flamenca TV",type:"party",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/Q39G"},
+  {d:31,m:10,y:2026,t:"This Is Drag",sub:"Especial Halloween",type:"party",tk:"Fourvenues",u:"https://site.fourvenues.com/es/this-is-drag/events/la-familia-drag--halloween-sevilla-31-10-2026-S243"},
+  {d:31,m:10,y:2026,t:"Morreo Club Halloween",type:"party",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/RGY4"},
+  {d:1,m:11,y:2026,t:"CRVX Halloween w/ SNTS y Vendex",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/FUWT"},
+  {d:6,m:11,y:2026,t:"Elli Acula, Ignez y Nørbak",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/VK74"},
+  {d:7,m:11,y:2026,t:"El gran musical de los 80 y 90",type:"live",tk:"Onebox",u:"https://tickets.oneboxtds.com/espectaculosonbeatproducciones/select/2914319"},
+  {d:7,m:11,y:2026,t:"Zaharave: lite",room:"The Moon",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-zaharave-lite-sevilla-sala-the-moon-pandora-sabado-7-de-noviembre"},
+  {d:7,m:11,y:2026,t:"Motion Bass Fest w/ Eptic, Hamdi y What So Not",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/OPQL"},
+  {d:13,m:11,y:2026,t:"Loop x Rebels w/ Franky Rizardo",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/AWKD"},
+  {d:14,m:11,y:2026,t:"Walls",type:"live",tk:"Enterticket",u:"https://www.enterticket.es/eventos/walls-en-sevilla-103612"},
+  {d:14,m:11,y:2026,t:"La Revoltosa FM",type:"party",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/4CRG"},
+  {d:20,m:11,y:2026,t:"Las Rodes",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-las-rodes-sevilla-sala-pandora-viernes-20-de-noviembre"},
+  {d:20,m:11,y:2026,t:"CRVX w/ Angerfist",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/VCE5"},
+  {d:21,m:11,y:2026,t:"Camin",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-camin-sevilla-sala-pandora-sabado-21-de-noviembre"},
+  {d:27,m:11,y:2026,t:"Sticky M.A.",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-sticky-ma-sevilla-sala-pandora-viernes-27-de-noviembre"},
+  {d:27,m:11,y:2026,t:"Rebels w/ Padre Guilherme",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/SOJD"},
+  {d:28,m:11,y:2026,t:"Cupido",type:"live",tk:"Enterticket",u:"https://www.enterticket.es/eventos/concierto-cupido-sevilla-sala-pandora-sabado-28-de-noviembre-177730?id_entradas=273478"},
+  {d:28,m:11,y:2026,t:"Alarico all night long",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/HMXH"},
+  {d:4,m:12,y:2026,t:"Rebels w/ Sara Landry",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/AXD0"},
+  {d:11,m:12,y:2026,t:"Niña Polaca",type:"live",tk:"Bring The Noise",u:"https://www.bringthenoise.events/evento/nina-polaca-sevilla-2026"},
+  {d:12,m:12,y:2026,t:"Cyril Kamer",type:"club",tk:"Enterticket",u:"https://www.enterticket.es/eventos/cyril-kamer-sevilla-309182"},
+  {d:18,m:12,y:2026,t:"Lin Cortés",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-lin-cortes-sevilla-sala-pandora-viernes-18-de-diciembre"},
+  {d:19,m:12,y:2026,t:"Haze",type:"live",so:true,tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-haze-sevilla-sala-pandora-sabado-19-de-diciembre"},
+  {d:26,m:12,y:2026,t:"Universo Makina",type:"club",tk:"Fourvenues",u:"https://www.fourvenues.com/rollercoaster/9IEG"},
+  {d:15,m:1,y:2027,t:"Paula Mattheus",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-paula-mattheus-sevilla-sala-pandora-viernes-15-de-enero"},
+  {d:4,m:2,y:2027,t:"Metrika",type:"live",so:true,tk:"Ticketmaster",u:"https://www.ticketmaster.es/event/metrika-entradas/1010089162"},
+  {d:5,m:2,y:2027,t:"Metrika",type:"live",so:true,tk:"Ticketmaster",u:"https://www.ticketmaster.es/event/2057373298?brand=base_mb_es"},
+  {d:12,m:2,y:2027,t:"Los Enemigos",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-los-enemigos-sevilla-sala-pandora-viernes-12-de-febrero"},
+  {d:13,m:2,y:2027,t:"Kabrönes",type:"live",tk:"Tiki Tickets",u:"https://tikitickets.mx/event/kabrones-en-sevilla"},
+  {d:20,m:2,y:2027,t:"L0rna",type:"live",so:true,tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-l0rna-sevilla-sala-pandora-sabado-20-de-febrero"},
+  {d:6,m:3,y:2027,t:"Hard GZ",type:"live",tk:"Ticketmaster",u:"https://www.ticketmaster.es/event/hard-gz-entradas/814814942"},
+  {d:12,m:3,y:2027,t:"Ginebras",type:"live",tk:"Crash Music",u:"https://entradas.crashmusic.es/event/concierto-ginebras-sevilla-pandora-viernes-12-de-marzo"},
+  {d:13,m:3,y:2027,t:"Miguel Campello",sub:"Gira Flamencura",type:"live",tk:"Entradas.com",u:"https://www.entradas.com/event/miguel-campello-gira-flamencura-pandora-sevilla-21722079"},
+  {d:20,m:3,y:2027,t:"Xoel López",type:"live",tk:"Enterticket",u:"https://www.enterticket.com/events/xoel-lopez-en-sevilla-631658"},
+  {d:3,m:4,y:2027,t:"Pignoise",type:"live",tk:"Preventa oficial",u:"https://registro.pignoisemusic.com"},
+  {d:23,m:4,y:2027,t:"D.Valentino",type:"live",tk:"DICE",u:"https://dice.fm/event/xe89ra-dvalentino-23rd-apr-pandora-sevilla-seville-tickets?lng=es"}
+];
+
+const MONTHS = ["Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+const MON_S = ["ene","feb","mar","abr","may","jun","jul","ago","sep","oct","nov","dic"];
+const DAYS = ["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
+const COL = {club:"var(--violet)", live:"var(--pink)", party:"var(--amber)"};
+const LABEL = {club:"Club", live:"Concierto", party:"Fiesta"};
+
+const now = new Date(); now.setHours(0,0,0,0);
+const dateOf = e => new Date(e.y, e.m-1, e.d);
+const upcoming = EVENTS.filter(e => dateOf(e) >= now).sort((a,b)=>dateOf(a)-dateOf(b));
+const months = [...new Set(upcoming.map(e => e.y*12 + (e.m-1)))];
+
+let mi = 0, filter = "all", day = null;
+
+const $ = id => document.getElementById(id);
+
+function inMonth(){
+  if(!months.length) return [];
+  const k = months[mi];
+  return upcoming.filter(e => e.y*12+(e.m-1) === k && (filter==="all" || e.type===filter));
+}
+
+function renderCal(){
+  const k = months[mi]; const y = Math.floor(k/12), m = k%12;
+  $("calTitle").textContent = `${MONTHS[m]} ${y}`;
+  const grid = $("grid"); grid.innerHTML = "";
+  ["L","M","X","J","V","S","D"].forEach(d => grid.insertAdjacentHTML("beforeend", `<div class="dow" aria-hidden="true">${d}</div>`));
+  const first = new Date(y, m, 1); const offset = (first.getDay()+6)%7;
+  const len = new Date(y, m+1, 0).getDate();
+  for(let i=0;i<offset;i++) grid.insertAdjacentHTML("beforeend","<div></div>");
+  const evs = inMonth();
+  for(let d=1; d<=len; d++){
+    const dayEvs = evs.filter(e => e.d===d);
+    const date = new Date(y,m,d);
+    const b = document.createElement("button");
+    b.className = "day" + (dayEvs.length ? " has" : "") + (date < now ? " past" : "") + (+date === +now ? " today" : "");
+    b.textContent = d;
+    if(dayEvs.length){
+      b.setAttribute("aria-pressed", day===d ? "true" : "false");
+      b.setAttribute("aria-label", `${d} de ${MONTHS[m].toLowerCase()}: ${dayEvs.map(e=>e.t).join(", ")}`);
+      b.insertAdjacentHTML("beforeend", `<span class="marks">${dayEvs.map(e=>`<i style="background:${COL[e.type]}"></i>`).join("")}</span>`);
+      b.onclick = () => { day = (day===d ? null : d); render(); document.getElementById("list").scrollIntoView({block:"start"}); };
+    } else { b.disabled = true; b.tabIndex = -1; }
+    grid.appendChild(b);
+  }
+  $("calCount").textContent = `${evs.length} ${evs.length===1?"evento":"eventos"} este mes`;
+  $("clearDay").hidden = day===null;
+}
+
+function card(e){
+  const dt = dateOf(e);
+  const tags = [`<span class="tag cat">${LABEL[e.type]}</span>`];
+  if(e.room) tags.push(`<span class="tag">Sala ${e.room}</span>`);
+  if(e.so) tags.push(`<span class="tag so">Entradas agotadas</span>`);
+  if(e.type!=="live") tags.push(`<span class="tag socio" title="Tarjeta de socio Club Pandora: 1 € de descuento en copas y 3% de cashback"><b class="socio-ico" aria-hidden="true"></b>Tarjeta de socio</span>`);
+  const meta = [DAYS[dt.getDay()]+" "+e.d+" de "+MONTHS[e.m-1].toLowerCase(), e.sub, "Entradas en "+e.tk].filter(Boolean).join(". ");
+  return `<article class="ticket" style="--cat:${COL[e.type]}">
+    <div class="stub" aria-hidden="true"><span class="wd">${DAYS[dt.getDay()].slice(0,3)}</span><span class="dn">${e.d}</span><span class="mo">${MON_S[e.m-1]}</span></div>
+    <div class="info"><div class="tags">${tags.join("")}</div><h3>${e.t}</h3><p class="meta">${meta}</p></div>
+    ${e.so ? `<span class="buy off">Agotado</span>` : `<a class="buy" href="${e.u}" target="_blank" rel="noopener">Comprar entradas<span class="sr-only" style="position:absolute;left:-9999px"> para ${e.t}</span></a>`}
+  </article>`;
+}
+
+function render(){
+  if(!months.length){
+    $("monthTitle").firstChild.textContent = "Agenda";
+    $("list").innerHTML = `<div class="empty">No hay eventos anunciados ahora mismo. Vuelve pronto o síguenos en Instagram.</div>`;
+    return;
+  }
+  const k = months[mi]; const m = k%12, y = Math.floor(k/12);
+  $("monthTitle").firstChild.textContent = MONTHS[m];
+  const total = inMonth().length;
+  $("monthSub").textContent = `${y} · ${upcoming.length} eventos próximos en Pandora Sevilla`;
+  $("prev").disabled = mi===0; $("next").disabled = mi===months.length-1;
+  renderCal();
+  let evs = inMonth(); if(day!==null) evs = evs.filter(e=>e.d===day);
+  $("status").textContent = day!==null
+    ? `${evs.length} ${evs.length===1?"evento":"eventos"} el ${day} de ${MONTHS[m].toLowerCase()}`
+    : `${total} ${total===1?"evento":"eventos"} en ${MONTHS[m].toLowerCase()}`;
+  $("list").innerHTML = evs.length ? evs.map(card).join("")
+    : `<div class="empty">No hay eventos de este tipo en ${MONTHS[m].toLowerCase()}.<br><button class="chip" onclick="setFilter('all')">Ver todo</button></div>`;
+}
+
+function setFilter(f){
+  filter = f; day = null;
+  document.querySelectorAll(".chip[data-f]").forEach(c => c.setAttribute("aria-pressed", c.dataset.f===f ? "true" : "false"));
+  render();
+}
+document.querySelectorAll(".chip[data-f]").forEach(c => c.onclick = () => setFilter(c.dataset.f));
+$("prev").onclick = () => { if(mi>0){ mi--; day=null; render(); } };
+$("next").onclick = () => { if(mi<months.length-1){ mi++; day=null; render(); } };
+$("clearDay").onclick = () => { day=null; render(); };
+render();
+</script>
+</body>
+</html>
