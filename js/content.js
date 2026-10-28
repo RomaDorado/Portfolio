@@ -16,7 +16,7 @@ window.PORTFOLIO = {
   /* ---------- Identidad y contacto ---------- */
   person: {
     name: "José Dorado",
-    valueProp: "Hago que una marca hable con una sola voz, dentro y fuera: en una red de 11 franquicias y en una cadena de nueve cines.",
+    valueProp: "Hago que una marca hable con una sola voz, dentro y fuera: en una red de 11 franquicias y en una cadena de 11 cines.",
     headline: "Comunicación corporativa, marketing B2B y gestión de marca.",
     eyebrow: "Comunicación y marketing · Sevilla",
     intro:
@@ -41,7 +41,7 @@ window.PORTFOLIO = {
 
   /* ---------- Ficha técnica (bloque lateral del inicio) ---------- */
   facts: [
-    { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 9 cines" },
+    { label: "Ahora", value: "Marketing y comunicación en Cines Artesiete, cadena nacional de 11 cines" },
     { label: "Trayectoria", value: "Casi 15 años en marketing" },
     { label: "Base", value: "Sevilla · traslado a Huelva desde el día 1" },
     { label: "Disponible", value: "Inmediata · presencial o remoto" },
@@ -66,7 +66,7 @@ window.PORTFOLIO = {
     roles: [
       {
         role: "Comunicación corporativa",
-        text: "Storytelling de marca y comunicación interna: gobernanza, mensajes clave y canales internos para una cadena de nueve cines.",
+        text: "Storytelling de marca y comunicación interna: gobernanza, mensajes clave y canales internos para una cadena de 11 cines.",
         tools: []
       },
       {
@@ -106,7 +106,7 @@ window.PORTFOLIO = {
       },
       {
         role: "Datos y formación",
-        text: "Análisis de márgenes de producto en las nueve salas y formación interna en automatización con Make (APIs, CRM).",
+        text: "Análisis de márgenes de producto en los 11 cines y formación interna en automatización con Make (APIs, CRM).",
         tools: ["Make", "Zoho CRM"]
       }
     ]
@@ -120,7 +120,7 @@ window.PORTFOLIO = {
       org: "Cines Artesiete",
       role: "Comunicación Corporativa y Marketing B2B",
       period: "Oct 2023 — actualidad",
-      context: "Único responsable de marketing de una cadena nacional de nueve cines.",
+      context: "Único responsable de marketing de una cadena nacional de 11 cines.",
       bullets: [
         "Storytelling de marca, comunicación interna, notas de prensa y relación con medios.",
         "Patrocinios con centros comerciales.",
@@ -128,7 +128,7 @@ window.PORTFOLIO = {
         "Automatización de copy y newsletters con Make y APIs; imagen y vídeo con IA generativa.",
         "Diseño y lanzamiento de la app corporativa (UX, arquitectura, frontend) y de su programa de fidelización: +17 % de uso y +0,75 € de ticket medio en app.",
         "Campañas multicanal para inauguraciones y lanzamientos: email, paid media y acciones en sala.",
-        "Formación interna en automatización con Make y análisis de márgenes de producto en las nueve salas."
+        "Formación interna en automatización con Make y análisis de márgenes de producto en los 11 cines."
       ],
       tools: ["Meta Business Suite", "Google Ads", "Make", "Canva", "Adobe", "WordPress", "Zoho CRM"],
       projects: ["app-artesiete", "paid-artesiete", "automatizacion", "margenes"]
@@ -209,7 +209,7 @@ window.PORTFOLIO = {
       year: "2023 — actualidad",
       title: "Paid media con presupuesto contenido",
       summary:
-        "Más de 25 campañas en Meta y Google para una cadena de nueve cines, con menos de 5.000 € de inversión.",
+        "Más de 25 campañas en Meta y Google para una cadena de 11 cines, con menos de 5.000 € de inversión.",
       role: "Planificación, creatividad y gestión de las campañas.",
       did: [
         "Campañas para inauguraciones, lanzamientos de producto y el lanzamiento de la app.",
@@ -293,7 +293,7 @@ window.PORTFOLIO = {
       year: "2014 — 2020 · 2023 — actualidad",
       title: "Análisis ABC de márgenes de producto",
       summary:
-        "Análisis continuo de la rentabilidad del surtido durante toda mi etapa en Elite Gaming Center y en Cines Artesiete, donde cubre la barra de las nueve salas. Una clasificación ABC separa los productos que sostienen el margen de los que lo lastran.",
+        "Análisis continuo de la rentabilidad del surtido durante toda mi etapa en Elite Gaming Center y en Cines Artesiete, donde cubre la barra de los 11 cines. Una clasificación ABC separa los productos que sostienen el margen de los que lo lastran.",
       did: [
         "Seguimiento continuo durante toda mi etapa en ambas empresas, no como un estudio puntual.",
         "Cálculo por referencia de coste unitario, PVP, margen bruto y markup, diferenciando margen sobre venta y recargo sobre coste.",
