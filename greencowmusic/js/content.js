@@ -385,10 +385,10 @@ window.PORTFOLIO = {
         "Lectura en dos capas: la campaña en sí y la estrategia de marca que hay detrás.",
         "Tesis propia conectada con canales concretos: taquilla, email, app y experiencia en sala.",
         "Cierre con una pregunta abierta para generar conversación con otros profesionales.",
-        "Casos analizados como el «House of Brands» de PepsiCo o el rebranding de MAPFRE."
+        "Casos de marcas de actualidad, desde grandes grupos de consumo hasta aseguradoras."
       ],
       tools: [],
-      result: "El post sobre PepsiCo (septiembre 2026) superó las 2.200 impresiones.",
+      result: "Más de 10.000 impresiones al mes solo con mis publicaciones orgánicas, sin inversión.",
       links: [{ label: "Ver perfil", url: "https://www.linkedin.com/in/jose-dorado/" }]
     },
     {
